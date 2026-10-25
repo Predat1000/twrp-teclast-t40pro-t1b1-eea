@@ -1,0 +1,14 @@
+{
+  "device/teclast/T40Pro_EEA/prebuilt/dtb.img": {
+    "bytes": 153110,
+    "sha256": "e6b1acb0b52a51c9042bd2059f695f199fa6a8687ce6df6457b22111bc503187"
+  },
+  "device/teclast/T40Pro_EEA/prebuilt/dtbo.img": {
+    "bytes": 8388608,
+    "sha256": "cb7df38dfc490d477f118e1aebe70fecd9c650759ba66e97612940953cf654d8"
+  },
+  "device/teclast/T40Pro_EEA/prebuilt/kernel": {
+    "bytes": 19664912,
+    "sha256": "81a0e8fd9ec1490b7275961eec835e5e2e19679ee20ee53e2939db121da34085"
+  }
+}

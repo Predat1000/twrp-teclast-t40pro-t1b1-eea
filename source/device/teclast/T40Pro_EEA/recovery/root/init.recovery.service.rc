@@ -1,0 +1,6 @@
+# TWRP recovery service for Teclast T40 Pro.
+service recovery /system/bin/recovery
+    class default
+    oneshot
+    socket recovery stream 422 system system
+    seclabel u:r:recovery:s0

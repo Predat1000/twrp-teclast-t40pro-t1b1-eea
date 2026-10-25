@@ -1,0 +1,71 @@
+{
+  "version": "V53B",
+  "status": "INPUTS_PREPARED_CLEAN_BUILD_PENDING",
+  "base_signed_sha256": "66e148317575181b9542fc08428081934b9822e6c3c5435b4570b44bfd6941c0",
+  "fresh_native_entries": 120,
+  "source_helpers": [
+    "init"
+  ],
+  "patched_stock_entry": "system/bin/init",
+  "patches": [
+    {
+      "offset": "0x75a5c",
+      "before": "0x540012ea",
+      "after": "0xd503201f"
+    },
+    {
+      "offset": "0x75ac4",
+      "before": "0x54000aca",
+      "after": "0xd503201f"
+    }
+  ],
+  "custom_init_expected_sha256": "93ca5f53a0d737d140e473d0b6ca7765ae61609f19bf55ccdc692458a050219d",
+  "patched_init_expected_sha256": "36e06777c037cb1ee914c2c373e18fed52e9bafc0395cd850a8f1471f22d5d93",
+  "template_origin": "Verified V53B label-corrected config/assets and102 frozen stock ELFs; all120 native output payloads and both init executables removed from template",
+  "files": {
+    "boot-header.bin": {
+      "bytes": 2048,
+      "sha256": "5e5c167aaf3e993c0c66471ac941dc9cbe0d3bba4002557dfef69f6fd839f316"
+    },
+    "build-helper-v43.original.sh": {
+      "bytes": 431,
+      "sha256": "fc464150556d8ed353f1c03302477f0fed99c1eeca400196f9ddcdeeece6908d"
+    },
+    "cpio_boot_utils.py": {
+      "bytes": 5220,
+      "sha256": "443d872880d496702b9962b7f9f9d031cdeb236f3ce24db1e0c601ab893f03d7"
+    },
+    "dtb.bin": {
+      "bytes": 153110,
+      "sha256": "e6b1acb0b52a51c9042bd2059f695f199fa6a8687ce6df6457b22111bc503187"
+    },
+    "kernel.bin": {
+      "bytes": 19664912,
+      "sha256": "7e9413ae8ffcbe92f44dce11b3cd46d5a3f01a07418e208dd9c39f32954f2043"
+    },
+    "native-output-map.json": {
+      "bytes": 31205,
+      "sha256": "5337928e1d94b03d424b2fc3884f649bd2d2d0f70250d40c6b97853aa5e6ad6b"
+    },
+    "ramdisk-template.cpio": {
+      "bytes": 33013952,
+      "sha256": "b40cf6142ec97d8af454c539788fe9029e8deaf56f7e65a239523d4154bdb353"
+    },
+    "recovery-dtbo.bin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "second.bin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stock-init-original.elf": {
+      "bytes": 1028864,
+      "sha256": "b5a14d9af76af64223a866d68bd5799444a488eca5bf2702008a458dc8cf4273"
+    },
+    "t40wm_init_v43.c": {
+      "bytes": 2892,
+      "sha256": "b095d19b3fbde37a6b07c096e317995ce78947f7aa20b7b61572ad16241eb754"
+    }
+  }
+}

@@ -1,0 +1,406 @@
+{
+  ".gitattributes": {
+    "bytes": 21,
+    "sha256": "33274285cb058c0ddc6501e949394ca6b33d8680b32dd51268d9dfde9a48ff93"
+  },
+  ".gitignore": {
+    "bytes": 330,
+    "sha256": "18510c68b5dec914af65ac12144de1e693380e087e951d247c3dcf726c2a8ce5"
+  },
+  "docs/ARQUITECTURA.md": {
+    "bytes": 2256,
+    "sha256": "93869fed794f99a5d3fcfcfa1c803d51db213bc47261be5ef9222caa133702ac"
+  },
+  "docs/INSTALACION.md": {
+    "bytes": 4452,
+    "sha256": "6d2b56c470a2685607300ab74a1396fba7b29f07bc810597081f080b7db7294d"
+  },
+  "docs/PUBLICATION-AUDIT.json": {
+    "bytes": 829,
+    "sha256": "6d1788c4b0bdcdc8bb16000bbe569e50ad8c34ef0caa99053ceff6769c3fa9d3"
+  },
+  "docs/REPRODUCCION.md": {
+    "bytes": 6258,
+    "sha256": "ff28cd38c59775c60c2f9dd5579f803d42c96098d4a282f697d6e1ea72fc36cb"
+  },
+  "docs/VALIDACION.md": {
+    "bytes": 3870,
+    "sha256": "da7d1d466401d1fdc0ec8a03ece002ea8000923191a588f32c07af964705bba5"
+  },
+  "NOTICE.md": {
+    "bytes": 1738,
+    "sha256": "6dedbdc7a993e076ce0c9ea0f2c621cb721765d42dc121ad46d10fd246b07fdc"
+  },
+  "README.md": {
+    "bytes": 4157,
+    "sha256": "cf4adddb9781ec23a4bf2744c327e1f4c82f0e5f21b533a65b684b299937b006"
+  },
+  "reproduce/assemble_clean.py": {
+    "bytes": 8565,
+    "sha256": "b2b4a32b67030198a2b325e00700f630a57955ad83097d9e6588d06fdfa949ba"
+  },
+  "reproduce/avbtool.py": {
+    "bytes": 203743,
+    "sha256": "7e7b2f1c2f3212f91d3e83c56e00b70f12fe112c0adf408990bfa602b9949fd7"
+  },
+  "reproduce/baseline-native-elf-spec.json": {
+    "bytes": 26782,
+    "sha256": "6424ac40cf84416afff36c5ff6f4c61fc15bee6e3023c43ea93e72e26a98ad71"
+  },
+  "reproduce/build-helper-v43.original.sh": {
+    "bytes": 431,
+    "sha256": "fc464150556d8ed353f1c03302477f0fed99c1eeca400196f9ddcdeeece6908d"
+  },
+  "reproduce/cpio_boot_utils.py": {
+    "bytes": 5220,
+    "sha256": "443d872880d496702b9962b7f9f9d031cdeb236f3ce24db1e0c601ab893f03d7"
+  },
+  "reproduce/elf_symbols.py": {
+    "bytes": 1449,
+    "sha256": "e8b422e4a54f8c97d2023df1a016c05ab3de6dff0e8ab85f3e34d872d74ecd1d"
+  },
+  "reproduce/inputs-manifest.json": {
+    "bytes": 2481,
+    "sha256": "4e1cddc3fe7472e6db0942e605a2662f779f36bf0a4b9e4f0fb4d4eff943cfd8"
+  },
+  "reproduce/native-architectures.json": {
+    "bytes": 8418,
+    "sha256": "6fc2a7c822e85171680d4d8b5ab1a661c67a5fa48da1a0103586841e611ecbc3"
+  },
+  "reproduce/native-output-map.json": {
+    "bytes": 31205,
+    "sha256": "5337928e1d94b03d424b2fc3884f649bd2d2d0f70250d40c6b97853aa5e6ad6b"
+  },
+  "reproduce/native-transfer-manifest.json": {
+    "bytes": 167,
+    "sha256": "132638c8463bae2917d3ccce94a510c71ccf008c02731110fa653976ed1ad3ac"
+  },
+  "reproduce/primary-audit-roots.json": {
+    "bytes": 455,
+    "sha256": "41bbdbf608d3c6f6ed3beff22d974eb5846bf11e20251ce10a67e380bb56317a"
+  },
+  "reproduce/requirements.txt": {
+    "bytes": 18,
+    "sha256": "9d9ecd4315a0ff31593dc85b31d0ce8804ba3db2c3908e773205f8b803106975"
+  },
+  "reproduce/t40wm_init_v43.c": {
+    "bytes": 2892,
+    "sha256": "b095d19b3fbde37a6b07c096e317995ce78947f7aa20b7b61572ad16241eb754"
+  },
+  "SHA256SUMS": {
+    "bytes": 198,
+    "sha256": "5b9362d5a523feb0c51fae2d90a1d4b2289e4cec235bbdac5b5b1d132b5109c6"
+  },
+  "source/device/teclast/T40Pro_EEA/Android.bp": {
+    "bytes": 185,
+    "sha256": "301b1a2207c354a68c41d009c3e97696a050f31a4617ee2d1d7560b48621da70"
+  },
+  "source/device/teclast/T40Pro_EEA/Android.mk": {
+    "bytes": 280,
+    "sha256": "d04355366a179fbfb2cd4d189de2cbae10ae51e8d38a40d177d8f43f13da16cf"
+  },
+  "source/device/teclast/T40Pro_EEA/AndroidProducts.mk": {
+    "bytes": 326,
+    "sha256": "b1e431a4612be29f5711641b7eb83ef4217633c8cfc94b2c4c77ca682139cd2a"
+  },
+  "source/device/teclast/T40Pro_EEA/BoardConfig.mk": {
+    "bytes": 5477,
+    "sha256": "f5dffc7b3b05cf66b60005e4de3286b5db6f5b87f13f6724c0108e618c1b517b"
+  },
+  "source/device/teclast/T40Pro_EEA/device.mk": {
+    "bytes": 569,
+    "sha256": "da6a9f3f0247918fc0cff4c6ec91bd7ac85d21915312ca986911e6d73d660636"
+  },
+  "source/device/teclast/T40Pro_EEA/extract-files.sh": {
+    "bytes": 1289,
+    "sha256": "e12df31d43fc063f6e3a3b36bc0f38b0443b12efe375b75a9dbad9125d0f335a"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/files/bootable/recovery/Android.mk": {
+    "bytes": 24227,
+    "sha256": "3c7f8fd43f52fa6c7dc5b7d9274b7a8e99f2de568d54545c71f35b87df1e2508"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/files/bootable/recovery/data.cpp": {
+    "bytes": 37831,
+    "sha256": "dafef1419b40aec6eec116dc11c196e9a1831fa1375ef7741173ecc603411718"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/files/bootable/recovery/etc/init.rc": {
+    "bytes": 7630,
+    "sha256": "c8b7d0853a974350f3432521a18045ed79345225b9c4fa4111846168c17c0e7c"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/files/bootable/recovery/minuitwrp/graphics_drm.cpp": {
+    "bytes": 31849,
+    "sha256": "f30d58544764c55829a2734f42f6fd8053d0c59ccada6f5d7fa680229e251b91"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/files/bootable/recovery/minuitwrp/libminuitwrp_defaults.go": {
+    "bytes": 6080,
+    "sha256": "4efd14fb6b245242b10e1c1eec2676d000bdfeb4e0a7f5d4bdc02f84649c45c1"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/files/bootable/recovery/partition.cpp": {
+    "bytes": 113996,
+    "sha256": "141823da306c4afa8fcb4ae7766fb33a6a50c038f40d3cb3e2bd3094f5c8d513"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/files/bootable/recovery/partitionmanager.cpp": {
+    "bytes": 127136,
+    "sha256": "32f29a846cde21dd00480665d42af0c504b0b2636f44ec82e5a74f7dab9c6328"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/files/system/core/fastboot/device/fastboot_device.cpp": {
+    "bytes": 6984,
+    "sha256": "116601111fb2916c7b6579aedf6d9dfc62c18ee7c33aa4888f060be12ff20e31"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/files/system/vold/Keymaster.cpp": {
+    "bytes": 9208,
+    "sha256": "a222c147b77870ece1e6029cbc64e214136fef594e55d5304ecbca48fede010f"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/files/system/vold/KeyUtil.cpp": {
+    "bytes": 18342,
+    "sha256": "d373358dd15f5fe50e152d7c638a1bbdee322537ecc8589a61639aeb287b8edc"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/files/system/vold/MetadataCrypt.cpp": {
+    "bytes": 14685,
+    "sha256": "bf42c0fdeb6d9d7d7aba880d29cc3dbff505bd5919f6458bba9dc47a91f4b4ec"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/files/vendor/twrp/config/BoardConfigSoong.mk": {
+    "bytes": 7545,
+    "sha256": "4d04f6df455c75eb492e14becdf69dae0f752dab1883e51b8d4f90182382390d"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/original/bootable/recovery/Android.mk": {
+    "bytes": 24130,
+    "sha256": "be812b957e4c2f1e1e3ab4bc2531c8a825109643230a994bbf05b1fa16199266"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/original/bootable/recovery/data.cpp": {
+    "bytes": 34453,
+    "sha256": "dcde828f2b4b5eefe3ae26942db35880be95df45b3d14af5ab5e5af64938c707"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/original/bootable/recovery/etc/init.rc": {
+    "bytes": 7224,
+    "sha256": "fe3bc35301b7ae6a5ff9b6e2d544f0d631183331fe383bc296bd31f9209be795"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/original/bootable/recovery/minuitwrp/graphics_drm.cpp": {
+    "bytes": 30094,
+    "sha256": "41aba0485d2ac547bc136e756017dcddcd47b5741340d592120dd0d7b5baabd3"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/original/bootable/recovery/minuitwrp/libminuitwrp_defaults.go": {
+    "bytes": 5837,
+    "sha256": "edd356631f0ee0c1c34171cbbf56f709150ac0273d6a5a8295e0cc22841f09c9"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/original/bootable/recovery/partition.cpp": {
+    "bytes": 113352,
+    "sha256": "a3918ab68581bff78d000f4cc6f05d6acd60f29f410a0b035b6e9c7e367c3f01"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/original/bootable/recovery/partitionmanager.cpp": {
+    "bytes": 127169,
+    "sha256": "755538163751ee7e0c5a614e6016de0bf456a2f8f4f011c4089cf20f14e250d9"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/original/system/core/fastboot/device/fastboot_device.cpp": {
+    "bytes": 7030,
+    "sha256": "cccfdb5da95f6a961021abd9f44d0abda12facd5c195f992e612f7596c3a6b98"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/original/system/vold/Keymaster.cpp": {
+    "bytes": 9212,
+    "sha256": "0dd4d451a3ba35daf73beb59605b49afb9d78beb4fdd5c046d531aee3adbf3c7"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/original/system/vold/KeyUtil.cpp": {
+    "bytes": 17853,
+    "sha256": "20cdf4122e33d13f32eeac128583b1379b9185e435d5825b94042e2e3f00fcad"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/original/system/vold/MetadataCrypt.cpp": {
+    "bytes": 14496,
+    "sha256": "f348fadb4f96a0e924611860565fd98b7c80c3ca51fc518300b10a3236a3ee8f"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/original/vendor/twrp/config/BoardConfigSoong.mk": {
+    "bytes": 7479,
+    "sha256": "4a5a9ae2a2e63f06f6271b9668e6e0e232be7d6af9dc6a79348a54acd34a5755"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/patch.sh": {
+    "bytes": 3406,
+    "sha256": "7e34789af4b72af6e13d4b63a50377ff4ada576c1e72893ac1a3a1e659c7a8ce"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/recovery.sh": {
+    "bytes": 1168,
+    "sha256": "ab55fca351cdfdf09501a1f183051a4582b06442299503236ba014b88436c6cf"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/source-files.txt": {
+    "bytes": 468,
+    "sha256": "9bb0112a47d8537fee751ef03122eca4d225e8a9865b56abbf9a76a55e85addd"
+  },
+  "source/device/teclast/T40Pro_EEA/README.md": {
+    "bytes": 654,
+    "sha256": "e44cd23bd6cf15e85a646cc4fd926ec35a2432d8603c3cc3febfcb3274801cb2"
+  },
+  "source/device/teclast/T40Pro_EEA/recovery/root/first_stage_ramdisk/fstab.ums512_1h10": {
+    "bytes": 489,
+    "sha256": "afc7e6eae51595e6cb8413bf564fbc05d8f8f65da41c6bda20086b0519e6e8fb"
+  },
+  "source/device/teclast/T40Pro_EEA/recovery/root/first_stage_ramdisk/fstab.ums512_1h10_go": {
+    "bytes": 525,
+    "sha256": "0e8cc1d3d16aefd7af8e34696e604e0f53286369e35c0f64e0c06ba39f16bf84"
+  },
+  "source/device/teclast/T40Pro_EEA/recovery/root/first_stage_ramdisk/fstab.ums512_20c10": {
+    "bytes": 525,
+    "sha256": "0e8cc1d3d16aefd7af8e34696e604e0f53286369e35c0f64e0c06ba39f16bf84"
+  },
+  "source/device/teclast/T40Pro_EEA/recovery/root/first_stage_ramdisk/fstab.ums512_2h10": {
+    "bytes": 525,
+    "sha256": "0e8cc1d3d16aefd7af8e34696e604e0f53286369e35c0f64e0c06ba39f16bf84"
+  },
+  "source/device/teclast/T40Pro_EEA/recovery/root/init.recovery.service.rc": {
+    "bytes": 187,
+    "sha256": "944ef67b90baf314f8e79cc7a13fcd03397872bf67eb3871d9926db7ead44749"
+  },
+  "source/device/teclast/T40Pro_EEA/recovery/root/init.recovery.ums512_1h10.rc": {
+    "bytes": 1537,
+    "sha256": "78db5a5e225bc9b688429c3b906bcb44344bba97e7eb9eb6830d7a100fe6dc0a"
+  },
+  "source/device/teclast/T40Pro_EEA/recovery/root/init.recovery.ums512_1h10_go.rc": {
+    "bytes": 73,
+    "sha256": "c6d8166bb7dbec1924b3689e8013b344def37e09d9f2ca07bd0fa985a6228cc0"
+  },
+  "source/device/teclast/T40Pro_EEA/recovery/root/init.recovery.ums512_20c10.rc": {
+    "bytes": 73,
+    "sha256": "c6d8166bb7dbec1924b3689e8013b344def37e09d9f2ca07bd0fa985a6228cc0"
+  },
+  "source/device/teclast/T40Pro_EEA/recovery/root/init.recovery.ums512_2h10.rc": {
+    "bytes": 73,
+    "sha256": "c6d8166bb7dbec1924b3689e8013b344def37e09d9f2ca07bd0fa985a6228cc0"
+  },
+  "source/device/teclast/T40Pro_EEA/recovery/root/system/etc/recovery.fstab": {
+    "bytes": 4018,
+    "sha256": "4d2a6ba1ca1391664f687892681d8e98ed94a796d1e222be87b02fae7ac0dcd6"
+  },
+  "source/device/teclast/T40Pro_EEA/recovery/root/system/etc/ueventd.rc": {
+    "bytes": 2608,
+    "sha256": "d67035ae852fd51e3dafd0386072ba4eac5350fa6102ef6602a5168c9d2ada3b"
+  },
+  "source/device/teclast/T40Pro_EEA/recovery/root/ueventd.ums512_1h10.rc": {
+    "bytes": 576,
+    "sha256": "bb233f6de7573c5db27dba4cd2e49a2cbc4af2c324322fe41efcdad453e37dd9"
+  },
+  "source/device/teclast/T40Pro_EEA/recovery/root/ueventd.ums512_1h10_go.rc": {
+    "bytes": 576,
+    "sha256": "bb233f6de7573c5db27dba4cd2e49a2cbc4af2c324322fe41efcdad453e37dd9"
+  },
+  "source/device/teclast/T40Pro_EEA/recovery/root/ueventd.ums512_20c10.rc": {
+    "bytes": 576,
+    "sha256": "bb233f6de7573c5db27dba4cd2e49a2cbc4af2c324322fe41efcdad453e37dd9"
+  },
+  "source/device/teclast/T40Pro_EEA/recovery/root/ueventd.ums512_2h10.rc": {
+    "bytes": 576,
+    "sha256": "bb233f6de7573c5db27dba4cd2e49a2cbc4af2c324322fe41efcdad453e37dd9"
+  },
+  "source/device/teclast/T40Pro_EEA/recovery-overlay.sh": {
+    "bytes": 1206,
+    "sha256": "16c847da8452f7f7077ded2a6c85d96deb56751abf9a468882c0fac4384d1786"
+  },
+  "source/device/teclast/T40Pro_EEA/recovery.fstab": {
+    "bytes": 4135,
+    "sha256": "af208e6b3fe7d428834305d1998cd20cea381924b662f271bc2532eb33cbfa74"
+  },
+  "source/device/teclast/T40Pro_EEA/setup-makefiles.sh": {
+    "bytes": 735,
+    "sha256": "c897f63ea637fcaa6a3e7e664b398bdb4b4df131930186b86aef3147ad05ac5f"
+  },
+  "source/device/teclast/T40Pro_EEA/t40_fbcap/Android.mk": {
+    "bytes": 354,
+    "sha256": "9d265e4731da2351b1024b734c7e2dd2e3a13cf8e4afd2e3cb65f9bc14fd2ca5"
+  },
+  "source/device/teclast/T40Pro_EEA/t40_fbcap/t40_fbcap.c": {
+    "bytes": 1991,
+    "sha256": "7073d4c19014f9add811e26fc044737ca2bb85919c87be1425753dfd22f5e0ab"
+  },
+  "source/device/teclast/T40Pro_EEA/t40_fbeprobe_ro/Android.mk": {
+    "bytes": 438,
+    "sha256": "e15219d44d6895da0abf76934a4936771e2b72af9398cb69eefcf880f28e01d1"
+  },
+  "source/device/teclast/T40Pro_EEA/t40_fbeprobe_ro/t40_fbeprobe_ro.cpp": {
+    "bytes": 14502,
+    "sha256": "d0e6f7b8d13848f4bb5175bf145f8e264a7036c347cd0cb5df25ed9f89cdc9ae"
+  },
+  "source/device/teclast/T40Pro_EEA/t40_install_keyring/Android.mk": {
+    "bytes": 374,
+    "sha256": "855ecd695426a35d4b27b5a5c2c47980951fa0553f07aa4b1f87e15b33a580fd"
+  },
+  "source/device/teclast/T40Pro_EEA/t40_install_keyring/t40_install_keyring.c": {
+    "bytes": 1249,
+    "sha256": "b6b0bd867b0f2c9e0686c35c370eb5be0bdde93ff03bf8cbf5548f6441fdd8af"
+  },
+  "source/device/teclast/T40Pro_EEA/t40_keymaster_ready/Android.mk": {
+    "bytes": 425,
+    "sha256": "520c7e034bd6f50f80ed6c39a56a8168d98436e45192c4f2019b066f44c81f7c"
+  },
+  "source/device/teclast/T40Pro_EEA/t40_keymaster_ready/t40_keymaster_ready.cpp": {
+    "bytes": 565,
+    "sha256": "ad713cd031ff7d9e8c2149521c9dd9ae0e1a0863ae43c31d928f7ef16452724c"
+  },
+  "source/device/teclast/T40Pro_EEA/t40_keyprobe/Android.mk": {
+    "bytes": 379,
+    "sha256": "8acb25656b8ef7456a287303085ce8957a72ac890aec87253a1dea0e4f799a19"
+  },
+  "source/device/teclast/T40Pro_EEA/t40_keyprobe/original-tree-hashes.json": {
+    "bytes": 557,
+    "sha256": "dac052d162995d833b0d77ca90bd95e59bab75763231d0b4030d8e9f73d7eb78"
+  },
+  "source/device/teclast/T40Pro_EEA/t40_keyprobe/t40_keyprobe.cpp": {
+    "bytes": 5969,
+    "sha256": "c5c992f7e43c3c9a3a30ad3d2e73c170ae1b50dcd393741befdff2fe8492f253"
+  },
+  "source/device/teclast/T40Pro_EEA/t40_metaprobe_ro/Android.mk": {
+    "bytes": 440,
+    "sha256": "01f3a2a4bc5360c2de89e39b7abc96e9087a1b8ae47bfd76e165311a82f842eb"
+  },
+  "source/device/teclast/T40Pro_EEA/t40_metaprobe_ro/t40_metaprobe_ro.cpp": {
+    "bytes": 9182,
+    "sha256": "38248a40096f67e3452e11c76b07110e201eeb751610627409582ee839698708"
+  },
+  "source/device/teclast/T40Pro_EEA/t40_mountprobe_ro/Android.mk": {
+    "bytes": 442,
+    "sha256": "143cdc92c1bfb6fc295c536e204664655261fe15f31ee116822152c268ff4b18"
+  },
+  "source/device/teclast/T40Pro_EEA/t40_mountprobe_ro/t40_mountprobe_ro.cpp": {
+    "bytes": 10842,
+    "sha256": "b2efa1a1905a3c58a62c80f12e7538046d7649c80b67ed90f1c0172064390bdf"
+  },
+  "source/device/teclast/T40Pro_EEA/twrp_T40Pro_EEA.mk": {
+    "bytes": 974,
+    "sha256": "21c4a11d28af8e066d1d244eb614ef87c76547d1514f0b5308e704613bdda236"
+  },
+  "source/device/teclast/T40Pro_EEA/vendorsetup.sh": {
+    "bytes": 271,
+    "sha256": "ce6f8f7188e44bde808a7346b45284a1eb166c4709080e47baca6519a55657bb"
+  },
+  "source/extra-source/t40wm_init_v43.c": {
+    "bytes": 2892,
+    "sha256": "b095d19b3fbde37a6b07c096e317995ce78947f7aa20b7b61572ad16241eb754"
+  },
+  "source/manifest.xml": {
+    "bytes": 89024,
+    "sha256": "2d751133f0a214ae9add0f23a2edafcdaf9944ddd8060a3d6f922de0808d6b0d"
+  },
+  "source/patches/bootable_recovery.patch": {
+    "bytes": 34822,
+    "sha256": "3b0c4473f4632cacb0407f8197f1b3ccb06f6ab9666d6412efd513230ca663dd"
+  },
+  "source/patches/frameworks_base.patch": {
+    "bytes": 1932,
+    "sha256": "4e0c3808a85a4d086152c503772003c43a9e04fee024c3cc6601f47900402381"
+  },
+  "source/patches/system_libvintf.patch": {
+    "bytes": 1978,
+    "sha256": "fab261dae22b0363992ef80c859ee6d36dbd434098fefcdacba1abbdc0d0ff5b"
+  },
+  "source/prebuilt-hashes.json": {
+    "bytes": 491,
+    "sha256": "2aab65a6071126ea8b215609215ee46b53f6d9772fc6197a08452a46b5fcf35a"
+  },
+  "source/untracked/bootable/recovery/t40_boot_policy.hpp": {
+    "bytes": 2133,
+    "sha256": "87ed3442f4768443dcf1e196bbeb8d6dae1a5bb8821b45db8e2f1b6604eed7ec"
+  },
+  "tools/export-native.py": {
+    "bytes": 3673,
+    "sha256": "f4ab045c9ac6735dd13f17edfdcd653ec1265c12d842fee58938a6dfabfe523f"
+  },
+  "tools/verify-release.py": {
+    "bytes": 1599,
+    "sha256": "621b6144114a10623e001ea1af7cd44e590b9d7095d69816de98fa5d11456fa9"
+  }
+}

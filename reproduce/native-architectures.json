@@ -1,0 +1,482 @@
+{
+  "system/bin/android.hardware.boot@1.0-service": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/android.hardware.boot@1.1-service": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/android.hardware.health@2.0-service": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/android.hardware.health@2.1-service": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/awk": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/bash": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/bc": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/bu": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/dump_image": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/e2fsck": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/e2fsdroid": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/erase_image": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/exfat-fuse": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/fastbootd": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/fatlabel": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/flash_image": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/fsck.exfat": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/fsck.f2fs": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/fsck.fat": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/hwservicemanager": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/keystore": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/keystore_cli_v2": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/logcat": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/logd": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/magiskboot": [
+    32,
+    "EM_ARM"
+  ],
+  "system/bin/make_f2fs": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/minadbd": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/mke2fs": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/mkexfatfs": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/mkfs.fat": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/nano": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/pigz": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/reboot": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/recovery": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/resetprop": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/resize2fs": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/servicemanager": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/sgdisk": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/sh": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/simg2img": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/sload_f2fs": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/toolbox": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/toybox": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/tune2fs": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/twrp": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/update_engine_sideload": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/vndservicemanager": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/vold_prepare_subdirs": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/watchdogd": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/ziptool": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/android.frameworks.stats@1.0.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/android.hidl.token@1.0.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/hw/android.hardware.health@2.0-impl-2.1.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/ld-android.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libandroid_runtime_lazy.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libaosprecovery.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libbinder.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libbinder_ndk.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libblkid.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libbmlutils.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libcap.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libchrome.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libclang_rt.ubsan_standalone-aarch64-android.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libcrecovery.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libdl_android.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libevent.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libexfat_twrp.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libext2_profile.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libflashutils.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libfscrypt.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libft2.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libhidltransport.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libminuitwrp.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libmmcutils.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libmtdutils.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libncurses.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libnetd_client.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libnl.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libresetprop.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libssh.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libssl.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libstdc++.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libsync.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libsysutils.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libtar.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libtwadbbu.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libtwrpdigest.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libtwrpmtp-ffs.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libunwind.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libusbhost.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libutil-linux.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libvintf.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libvndksupport.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libziparchive.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libcryptfsfde.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libgpt_twrp.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libstatssocket.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libtwrpfscrypt.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/android.hardware.authsecret@1.0.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/android.hardware.oemlock@1.0.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libkeymaster_messages.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/android.hardware.keymaster@3.0.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libkeystore_binder.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/android.hardware.keymaster@4.0.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libkeymaster4support.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/android.hardware.confirmationui@1.0.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/android.hardware.gatekeeper@1.0.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/android.hardware.keymaster@4.1.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libkeymaster4_1support.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libf2fs_sparseblock.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libkeystore_parcelables.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libkeystore_aidl.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/android.hardware.weaver@1.0.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libhwbinder.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/lib64/libkeystore-attestation-application-id.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "t40km/root/data/local/tmp/t40_keyprobe": [
+    64,
+    "EM_AARCH64"
+  ],
+  "t40km/root/system/lib64/ld-android.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "t40km/root/apex/com.android.runtime/lib64/bionic/libdl_android.so": [
+    64,
+    "EM_AARCH64"
+  ],
+  "t40km/root/data/local/tmp/t40_keymaster_ready": [
+    64,
+    "EM_AARCH64"
+  ],
+  "system/bin/t40_install_keyring": [
+    64,
+    "EM_AARCH64"
+  ]
+}

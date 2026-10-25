@@ -1,0 +1,7 @@
+{
+  "device/teclast/T40Pro_EEA/BoardConfig.mk": "edc058028526f57b6bfba63882c06c36674a5068b7e058fea3279fd3d34534af",
+  "bootable/recovery/crypto/fscrypt/KeyStorage.cpp": "588e09caff009a79fdf4b50593760abba11a34c10d1334b80fb9415cca868342",
+  "bootable/recovery/crypto/fscrypt/Android.mk": "c6d878ad312b65210720cc0fe745bd5e23737fd672c43c6cdf564beebd5e39fa",
+  "bootable/recovery/etc/init.rc": "85f50e5094d22db78d2deb32849cb627552c2b20ba1dafb8e497a59decbd0894",
+  "bootable/recovery/twrp.cpp": "514143cb904460220d84f0b19d3c9ccc4206535ec048b6d3bafe1d991e0ccab1"
+}

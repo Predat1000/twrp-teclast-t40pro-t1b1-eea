@@ -1,0 +1,14 @@
+{
+  "checkpoint": "CP10",
+  "date": "2026-10-25",
+  "status": "PUBLICATION_PACKAGE_VERIFIED",
+  "firmware_sha256": "b029e36391ca919feef66d608eb5964562433d1b205ee0ebf8ba8579a0af4451",
+  "reproduction_archive_inputs": 23,
+  "reassembled_image_identical": true,
+  "portable_export_matches_original_archive": true,
+  "native_artifacts_sha256": "9ea63cbc6f716df8366a1afca21da7bd009692c56839ec4b76e03f0e39dc7cce",
+  "privacy_review": "Curated files plus pattern scan of text, source archives, native payloads and unpacked ramdisk. No detected credential material, device serial, Wi-Fi configuration or private network addresses. libssh PEM label is a parser string, not a PEM key object.",
+  "scanned_entries": 3984,
+  "private_raw_logs_and_device_backups_excluded": true,
+  "no_tablet_action_during_publication": true
+}

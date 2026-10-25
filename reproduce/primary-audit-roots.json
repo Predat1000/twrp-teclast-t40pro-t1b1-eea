@@ -1,0 +1,13 @@
+[
+  "system/bin/recovery",
+  "system/bin/init",
+  "system/bin/adbd",
+  "system/bin/hwservicemanager",
+  "system/bin/fastbootd",
+  "system/bin/android.hardware.boot@1.1-service",
+  "system/lib64/hw/android.hardware.boot@1.0-impl-1.1.so",
+  "system/bin/android.hardware.health@2.1-service",
+  "system/lib64/hw/android.hardware.health@2.0-impl-2.1.so",
+  "system/lib64/hw/android.hardware.fastboot@1.0-impl.so",
+  "system/lib64/libminuitwrp.so"
+]

@@ -1,0 +1,879 @@
+diff --git a/crypto/fscrypt/Android.mk b/crypto/fscrypt/Android.mk
+index d9fb6ef..cdbf0ee 100755
+--- a/crypto/fscrypt/Android.mk
++++ b/crypto/fscrypt/Android.mk
+@@ -6,6 +6,9 @@ LOCAL_MODULE := libtwrpfscrypt
+ LOCAL_MODULE_TAGS := optional
+ LOCAL_CFLAGS := -Wno-unused-variable -Wno-sign-compare -Wno-unused-parameter -Wno-comment -Wno-missing-field-initializers \
+     -DHAVE_LIBKEYUTILS -std=gnu++2a -Wno-macro-redefined -Wno-unused-function -fpic
++ifeq ($(TW_T40_EXISTING_KEYS_ONLY), true)
++LOCAL_CFLAGS += -DT40_EXISTING_KEYS_ONLY
++endif
+ LOCAL_SRC_FILES := FsCrypt.cpp Decrypt.cpp ScryptParameters.cpp fscrypt_policy.cpp Utils.cpp HashPassword.cpp \
+     KeyUtil.cpp Keymaster.cpp KeyStorage.cpp MetadataCrypt.cpp KeyBuffer.cpp \
+     Process.cpp EncryptInplace.cpp Weaver1.cpp cryptfs.cpp Checkpoint.cpp CryptoType.cpp VoldUtil.cpp
+diff --git a/crypto/fscrypt/Decrypt.cpp b/crypto/fscrypt/Decrypt.cpp
+index 0217358..4c3de13 100755
+--- a/crypto/fscrypt/Decrypt.cpp
++++ b/crypto/fscrypt/Decrypt.cpp
+@@ -1132,6 +1132,12 @@ bool Decrypt_User(const userid_t user_id, const std::string& Password) {
+ 	}
+     std::string filename;
+     bool Default_Password = (Password == "!");
++#ifdef T40_EXISTING_KEYS_ONLY
++    if (!Default_Password) {
++        printf("T40 V48: only the validated existing no-password key path is enabled\n");
++        return false;
++    }
++#endif
+     if (Get_Password_Type(user_id, filename) == 0 && !Default_Password) {
+ 		printf("Unknown password type\n");
+ 		return false;
+diff --git a/crypto/fscrypt/FsCrypt.cpp b/crypto/fscrypt/FsCrypt.cpp
+index a2049a2..17cd5d5 100755
+--- a/crypto/fscrypt/FsCrypt.cpp
++++ b/crypto/fscrypt/FsCrypt.cpp
+@@ -34,6 +34,9 @@
+ #include <fcntl.h>
+ #include <limits.h>
+ #include <selinux/android.h>
++#include <linux/fscrypt.h>
++#include <sys/ioctl.h>
++#include <cstring>
+ #include <sys/mount.h>
+ #include <sys/stat.h>
+ #include <sys/types.h>
+@@ -81,6 +84,28 @@ using ::writeStringToFile;
+ using namespace android::fscrypt;
+ using namespace android::dm;
+ 
++#ifdef T40_EXISTING_KEYS_ONLY
++// Compare existing v2 policy without issuing FS_IOC_SET_ENCRYPTION_POLICY.
++static bool t40_verify_existing_policy(const EncryptionPolicy& expected,
++                                       const std::string& path) {
++    android::base::unique_fd fd(open(path.c_str(), O_RDONLY | O_DIRECTORY | O_CLOEXEC));
++    if (fd < 0 || expected.options.version != 2 || expected.options.use_hw_wrapped_key ||
++        expected.key_raw_ref.size() != FSCRYPT_KEY_IDENTIFIER_SIZE) return false;
++    struct fscrypt_get_policy_ex_arg arg{};
++    arg.policy_size = sizeof(arg.policy);
++    if (ioctl(fd, FS_IOC_GET_ENCRYPTION_POLICY_EX, &arg)) return false;
++    const auto& v = arg.policy.v2;
++    bool ok = v.version == FSCRYPT_POLICY_V2 &&
++              v.contents_encryption_mode == expected.options.contents_mode &&
++              v.filenames_encryption_mode == expected.options.filenames_mode &&
++              v.flags == expected.options.flags &&
++              memcmp(v.master_key_identifier, expected.key_raw_ref.data(),
++                     FSCRYPT_KEY_IDENTIFIER_SIZE) == 0;
++    if (!ok) LOG(ERROR) << "T40: existing policy mismatch: " << path;
++    return ok;
++}
++#endif
++
+ // Map user ids to encryption policies
+ std::map<userid_t, EncryptionPolicy> s_de_policies;
+ std::map<userid_t, EncryptionPolicy> s_ce_policies;
+@@ -178,6 +203,11 @@ static bool get_ce_key_new_path(const std::string& directory_path,
+ // No point in acting on errors in this; ignore them.
+ static void fixate_user_ce_key(const std::string& directory_path, const std::string& to_fix,
+                                const std::vector<std::string>& paths) {
++#ifdef T40_EXISTING_KEYS_ONLY
++    LOG(INFO) << "T40: using existing CE key; no rename or deletion";
++    return;
++#endif
++
+     for (auto const other_path : paths) {
+         if (other_path != to_fix) {
+             ::destroyKey(other_path);
+@@ -325,12 +355,23 @@ static bool read_and_install_user_ce_key(userid_t user_id,
+ }
+ 
+ static bool prepare_dir(const std::string& dir, mode_t mode, uid_t uid, gid_t gid) {
++#ifdef T40_EXISTING_KEYS_ONLY
++    struct stat st{};
++    if (stat(dir.c_str(), &st) != 0 || !S_ISDIR(st.st_mode)) {
++        LOG(ERROR) << "T40: required existing directory absent: " << dir;
++        return false;
++    }
++    return true;
++#else
++
+     LOG(INFO) << "Preparing: " << dir;
+     if (fs_prepare_dir(dir.c_str(), mode, uid, gid) != 0) {
+         PLOG(ERROR) << "Failed to prepare " << dir;
+         return false;
+     }
+     return true;
++
++#endif
+ }
+ 
+ static bool destroy_dir(const std::string& dir) {
+@@ -345,6 +386,11 @@ static bool destroy_dir(const std::string& dir) {
+ // NB this assumes that there is only one thread listening for crypt commands, because
+ // it creates keys in a fixed location.
+ static bool create_and_install_user_keys(userid_t user_id, bool create_ephemeral) {
++#ifdef T40_EXISTING_KEYS_ONLY
++    LOG(ERROR) << "T40: persistent key mutation disabled in recovery";
++    return false;
++#endif
++
+     LOG(INFO) << "fscrypt::create_and_install_user_keys";
+     EncryptionOptions options;
+     if (!get_data_file_encryption_options(&options)) return false;
+@@ -455,6 +501,19 @@ static bool try_reload_ce_keys() {
+ }
+ 
+ bool fscrypt_initialize_systemwide_keys() {
++#ifdef T40_EXISTING_KEYS_ONLY
++    EncryptionOptions options;
++    if (!get_data_file_encryption_options(&options)) return false;
++    KeyBuffer key;
++    if (!retrieveKey(device_key_path, kEmptyAuthentication, &key, true)) return false;
++    EncryptionPolicy policy;
++    if (!install_storage_key(DATA_MNT_POINT, options, key, &policy)) return false;
++    if (!t40_verify_existing_policy(policy, "/data/misc")) return false;
++    de_key_raw_ref = policy.key_raw_ref;
++    LOG(INFO) << "T40: existing system DE key installed; no refs/per-boot key writes";
++    return true;
++#else
++
+     LOG(INFO) << "fscrypt_initialize_systemwide_keys";
+ 
+     EncryptionOptions options;
+@@ -492,6 +551,8 @@ bool fscrypt_initialize_systemwide_keys() {
+ 
+     if (!::FsyncDirectory(device_key_dir)) return false;
+     return true;
++
++#endif
+ }
+ 
+ bool fscrypt_init_user0() {
+@@ -842,6 +903,28 @@ static bool prepare_subdirs(const std::string& action, const std::string& volume
+ 
+ bool fscrypt_prepare_user_storage(const std::string& volume_uuid, userid_t user_id, int serial,
+                                   int flags) {
++#ifdef T40_EXISTING_KEYS_ONLY
++    if (!volume_uuid.empty() || !fscrypt_is_native()) return false;
++    EncryptionPolicy policy;
++    if (flags & android::os::IVold::STORAGE_FLAG_DE) {
++        if (!lookup_policy(s_de_policies, user_id, &policy)) return false;
++        for (const auto& path : {BuildDataSystemDePath(user_id), BuildDataMiscDePath(user_id),
++                                BuildDataVendorDePath(user_id), BuildDataUserDePath("", user_id)}) {
++            if (!t40_verify_existing_policy(policy, path)) return false;
++        }
++    }
++    if (flags & android::os::IVold::STORAGE_FLAG_CE) {
++        if (!lookup_policy(s_ce_policies, user_id, &policy)) return false;
++        for (const auto& path : {BuildDataSystemCePath(user_id), BuildDataMiscCePath(user_id),
++                                BuildDataVendorCePath(user_id), BuildDataMediaCePath("", user_id),
++                                BuildDataUserCePath("", user_id)}) {
++            if (!t40_verify_existing_policy(policy, path)) return false;
++        }
++    }
++    LOG(INFO) << "T40: existing user policy checks passed; no provisioning/restorecon";
++    return true;
++#else
++
+     LOG(INFO) << "fscrypt_prepare_user_storage for volume " << escape_empty(volume_uuid)
+                << ", user " << user_id << ", serial " << serial << ", flags " << flags;
+ 
+@@ -938,6 +1021,8 @@ bool fscrypt_prepare_user_storage(const std::string& volume_uuid, userid_t user_
+     if (!prepare_subdirs("prepare", volume_uuid, user_id, flags)) return false;
+ 
+     return true;
++
++#endif
+ }
+ 
+ bool fscrypt_destroy_user_storage(const std::string& volume_uuid, userid_t user_id, int flags) {
+diff --git a/crypto/fscrypt/KeyStorage.cpp b/crypto/fscrypt/KeyStorage.cpp
+index 8afc579..6594c56 100755
+--- a/crypto/fscrypt/KeyStorage.cpp
++++ b/crypto/fscrypt/KeyStorage.cpp
+@@ -205,6 +205,11 @@ static bool readRandomBytesOrLog(size_t count, std::string* out) {
+ }
+ 
+ bool createSecdiscardable(const std::string& filename, std::string* hash) {
++#ifdef T40_EXISTING_KEYS_ONLY
++    LOG(ERROR) << "T40: persistent key mutation disabled in recovery";
++    return false;
++#endif
++
+     std::string secdiscardable;
+     if (!readRandomBytesOrLog(SECDISCARDABLE_BYTES, &secdiscardable)) return false;
+     if (!writeStringToFile(secdiscardable, filename)) return false;
+@@ -261,6 +266,10 @@ static KeymasterOperation begin(Keymaster& keymaster, const std::string& dir,
+             return opHandle;
+         }
+         if (opHandle.errorCode() != km::ErrorCode::KEY_REQUIRES_UPGRADE) return opHandle;
++#ifdef T40_EXISTING_KEYS_ONLY
++        LOG(ERROR) << "T40: key requires upgrade; leaving existing blob untouched";
++        return opHandle;
++#endif
+         LOG(DEBUG) << "Upgrading key: " << dir;
+         std::string newKey;
+         if (!keymaster.upgradeKey(kmKey, keyParams, &newKey)) return KeymasterOperation();
+@@ -499,6 +508,11 @@ bool pathExists(const std::string& path) {
+ }
+ 
+ bool storeKey(const std::string& dir, const KeyAuthentication& auth, const KeyBuffer& key) {
++#ifdef T40_EXISTING_KEYS_ONLY
++    LOG(ERROR) << "T40: persistent key mutation disabled in recovery";
++    return false;
++#endif
++
+     if (TEMP_FAILURE_RETRY(mkdir(dir.c_str(), 0700)) == -1) {
+         PLOG(ERROR) << "key mkdir " << dir;
+         return false;
+@@ -541,6 +555,11 @@ bool storeKey(const std::string& dir, const KeyAuthentication& auth, const KeyBu
+ 
+ bool storeKeyAtomically(const std::string& key_path, const std::string& tmp_path,
+                         const KeyAuthentication& auth, const KeyBuffer& key) {
++#ifdef T40_EXISTING_KEYS_ONLY
++    LOG(ERROR) << "T40: persistent key mutation disabled in recovery";
++    return false;
++#endif
++
+     if (pathExists(key_path)) {
+         LOG(ERROR) << "Already exists, cannot create key at: " << key_path;
+         return false;
+@@ -607,6 +626,11 @@ static bool deleteKey(const std::string& dir) {
+ }
+ 
+ bool runSecdiscardSingle(const std::string& file) {
++#ifdef T40_EXISTING_KEYS_ONLY
++    LOG(ERROR) << "T40: persistent key mutation disabled in recovery";
++    return false;
++#endif
++
+     if (ForkExecvp(std::vector<std::string>{kSecdiscardPath, "--", file}) != 0) {
+         LOG(ERROR) << "secdiscard failed";
+         return false;
+@@ -623,6 +647,11 @@ static bool recursiveDeleteKey(const std::string& dir) {
+ }
+ 
+ bool destroyKey(const std::string& dir) {
++#ifdef T40_EXISTING_KEYS_ONLY
++    LOG(ERROR) << "T40: persistent key mutation disabled in recovery";
++    return false;
++#endif
++
+     bool success = true;
+     // Try each thing, even if previous things failed.
+     bool uses_km = pathExists(dir + "/" + kFn_keymaster_key_blob);
+diff --git a/crypto/fscrypt/KeyUtil.cpp b/crypto/fscrypt/KeyUtil.cpp
+index b7119a6..2283137 100755
+--- a/crypto/fscrypt/KeyUtil.cpp
++++ b/crypto/fscrypt/KeyUtil.cpp
+@@ -51,6 +51,11 @@ static bool randomKey(size_t size, KeyBuffer* key) {
+ }
+ 
+ bool generateStorageKey(const KeyGeneration& gen, KeyBuffer* key) {
++#ifdef T40_EXISTING_KEYS_ONLY
++    LOG(ERROR) << "T40: persistent key mutation disabled in recovery";
++    return false;
++#endif
++
+     if (!gen.allow_gen) return false;
+     if (gen.use_hw_wrapped_key) {
+         if (gen.keysize != FSCRYPT_MAX_KEY_SIZE) {
+diff --git a/crypto/fscrypt/Keymaster.cpp b/crypto/fscrypt/Keymaster.cpp
+index c5b7bc3..1940ccc 100755
+--- a/crypto/fscrypt/Keymaster.cpp
++++ b/crypto/fscrypt/Keymaster.cpp
+@@ -95,10 +95,13 @@ bool KeymasterOperation::finish(std::string* output) {
+ 
+ Keymaster::Keymaster() {
+     auto devices = KmDevice::enumerateAvailableDevices();
++    // V48 read-existing no-password path: match the validated helper.
++#ifndef T40_EXISTING_KEYS_ONLY
+     if (!hmacKeyGenerated) {
+         KmDevice::performHmacKeyAgreement(devices);
+         hmacKeyGenerated = true;
+     }
++#endif
+     for (auto& dev : devices) {
+         // Do not use StrongBox for device encryption / credential encryption.  If a security chip
+         // is present it will have Weaver, which already strengthens CE.  We get no additional
+@@ -116,6 +119,11 @@ Keymaster::Keymaster() {
+ }
+ 
+ bool Keymaster::generateKey(const km::AuthorizationSet& inParams, std::string* key) {
++#ifdef T40_EXISTING_KEYS_ONLY
++    LOG(ERROR) << "T40: persistent key mutation disabled in recovery";
++    return false;
++#endif
++
+     km::ErrorCode km_error;
+     auto hidlCb = [&](km::ErrorCode ret, const hidl_vec<uint8_t>& keyBlob,
+                       const km::KeyCharacteristics& /*ignored*/) {
+@@ -158,6 +166,11 @@ km::ErrorCode Keymaster::exportKey(const KeyBuffer& kmKey, std::string* key) {
+ }
+ 
+ bool Keymaster::deleteKey(const std::string& key) {
++#ifdef T40_EXISTING_KEYS_ONLY
++    LOG(ERROR) << "T40: persistent key mutation disabled in recovery";
++    return false;
++#endif
++
+     auto keyBlob = km::support::blob2hidlVec(key);
+     auto error = mDevice->deleteKey(keyBlob);
+     if (!error.isOk()) {
+@@ -173,6 +186,11 @@ bool Keymaster::deleteKey(const std::string& key) {
+ 
+ bool Keymaster::upgradeKey(const std::string& oldKey, const km::AuthorizationSet& inParams,
+                            std::string* newKey) {
++#ifdef T40_EXISTING_KEYS_ONLY
++    LOG(ERROR) << "T40: persistent key mutation disabled in recovery";
++    return false;
++#endif
++
+     auto oldKeyBlob = km::support::blob2hidlVec(oldKey);
+     km::ErrorCode km_error;
+     auto hidlCb = [&](km::ErrorCode ret, const hidl_vec<uint8_t>& upgradedKeyBlob) {
+diff --git a/crypto/fscrypt/MetadataCrypt.cpp b/crypto/fscrypt/MetadataCrypt.cpp
+old mode 100755
+new mode 100644
+index 853e81e..91b0275
+--- a/crypto/fscrypt/MetadataCrypt.cpp
++++ b/crypto/fscrypt/MetadataCrypt.cpp
+@@ -18,6 +18,7 @@
+ #include "KeyBuffer.h"
+ 
+ #include <algorithm>
++#include <chrono>
+ #include <string>
+ #include <thread>
+ #include <vector>
+@@ -38,6 +39,11 @@
+ 
+ #include "Checkpoint.h"
+ #include "CryptoType.h"
++#include <linux/fs.h>
++#include <sys/ioctl.h>
++#include <sys/mount.h>
++#include <sys/statvfs.h>
++#include <android-base/unique_fd.h>
+ #include "EncryptInplace.h"
+ #include "FsCrypt.h"
+ #include "KeyStorage.h"
+@@ -85,7 +91,52 @@ const KeyGeneration makeGen(const CryptoOptions& options) {
+     return KeyGeneration{options.cipher.get_keysize(), true, options.use_hw_wrapped_key};
+ }
+ 
++#ifdef T40_EXISTING_KEYS_ONLY
++// Read-only by default. The explicit immutable image property permits /data RW
++// on the experimental B slot; all existing-key-only guards remain in force.
++static bool t40_userdata_writable() {
++    return android::base::GetBoolProperty("ro.t40.crypto.allow_userdata_rw", false) &&
++           android::base::GetProperty("ro.boot.slot_suffix", "") == "_b";
++}
++#endif
++
+ static bool mount_via_fs_mgr(const char* mount_point, const char* blk_device) {
++#ifdef T40_EXISTING_KEYS_ONLY
++    // Direct mount only: no fsck, formatting or key provisioning.
++    // RO remains available without filesystem replay; RW uses normal F2FS mount.
++    if (std::string(mount_point) != "/data") return false;
++    android::base::unique_fd fd(open(blk_device, O_RDONLY | O_CLOEXEC));
++    int ro = 0;
++    if (fd < 0) {
++        PLOG(ERROR) << "T40: opening metadata mapper failed";
++        return false;
++    }
++    if (ioctl(fd, BLKROGET, &ro) != 0) {
++        PLOG(ERROR) << "T40: BLKROGET failed for metadata mapper";
++        return false;
++    }
++    const bool writable = t40_userdata_writable();
++    if (ro != (writable ? 0 : 1)) {
++        LOG(ERROR) << "T40: metadata mapper mode differs from immutable image policy";
++        return false;
++    }
++    const unsigned long flags = MS_NOSUID | MS_NODEV | MS_NOEXEC |
++                                (writable ? 0UL : MS_RDONLY);
++    if (mount(blk_device, mount_point, "f2fs", flags,
++              writable ? "inlinecrypt" : "norecovery,inlinecrypt") != 0) {
++        PLOG(ERROR) << "T40: policy-selected F2FS mount failed";
++        return false;
++    }
++    struct statvfs v{};
++    if (statvfs(mount_point, &v) || bool(v.f_flag & ST_RDONLY) == writable) {
++        LOG(ERROR) << "T40: mounted filesystem mode differs from image policy";
++        umount(mount_point);
++        return false;
++    }
++    LOG(INFO) << "T40: existing-key filesystem mounted mode=" << (writable ? "rw" : "ro");
++    return true;
++#else
++
+     // We're about to mount data not verified by verified boot.  Tell Keymaster instances that early
+     // boot has ended.
+     ::Keymaster::earlyBootEnded();
+@@ -116,6 +167,8 @@ static bool mount_via_fs_mgr(const char* mount_point, const char* blk_device) {
+     }
+     LOG(INFO) << "mount_via_fs_mgr::Mounted " << mount_point;
+     return true;
++
++#endif
+ }
+ 
+ // Note: It is possible to orphan a key if it is removed before deleting
+@@ -145,6 +198,17 @@ static void commit_key(const std::string& dir) {
+ 
+ static bool read_key(const std::string& metadata_key_dir, const KeyGeneration& gen,
+                      KeyBuffer* key) {
++#ifdef T40_EXISTING_KEYS_ONLY
++    if (metadata_key_dir != "/metadata/vold/metadata_encryption") return false;
++    const auto dir = metadata_key_dir + "/key";
++    if (pathExists(dir + "/keymaster_key_blob_upgraded")) {
++        LOG(ERROR) << "T40: unresolved key upgrade; refusing mutation";
++        return false;
++    }
++    LOG(INFO) << "T40: retrieving existing metadata key without provisioning";
++    return retrieveKey(dir, kEmptyAuthentication, key, true);
++#else
++
+     if (metadata_key_dir.empty()) {
+         LOG(ERROR) << "Failed to get metadata_key_dir";
+         return false;
+@@ -177,6 +241,8 @@ static bool read_key(const std::string& metadata_key_dir, const KeyGeneration& g
+     if (!retrieveOrGenerateKey(dir, temp, kEmptyAuthentication, gen, key, true)) return false;
+     if (needs_cp && pathExists(newKeyPath)) std::thread(commit_key, dir).detach();
+     return true;
++
++#endif
+ }
+ 
+ static bool get_number_of_sectors(const std::string& real_blkdev, uint64_t* nr_sec) {
+@@ -220,8 +286,19 @@ static bool create_crypto_blk_dev(const std::string& dm_name, const std::string&
+ 
+     DmTable table;
+     table.AddTarget(std::move(target));
++#ifdef T40_EXISTING_KEYS_ONLY
++    table.set_readonly(!(dm_name == kDmNameUserdata && t40_userdata_writable()));
++#endif
+ 
+     auto& dm = DeviceMapper::Instance();
++#ifdef T40_EXISTING_KEYS_ONLY
++    // Wait on the unique UUID path, not a potentially stale dm-N node.
++    // libdm documents CreateDevice(name, table) as non-waiting.
++    if (!dm.CreateDevice(dm_name, table, crypto_blkdev, std::chrono::milliseconds(2500))) {
++        LOG(ERROR) << "T40: metadata mapper did not become ready";
++        return false;
++    }
++#else
+     for (int i = 0;; i++) {
+         if (dm.CreateDevice(dm_name, table)) {
+             break;
+@@ -233,6 +310,7 @@ static bool create_crypto_blk_dev(const std::string& dm_name, const std::string&
+         PLOG(INFO) << "Could not create default-key device, retrying";
+         usleep(500000);
+     }
++#endif
+ 
+     if (!dm.GetDmDevicePathByName(dm_name, crypto_blkdev)) {
+         LOG(ERROR) << "Cannot retrieve default-key device status " << dm_name;
+@@ -280,6 +358,19 @@ static bool parse_options(const std::string& options_string, CryptoOptions* opti
+ 
+ bool fscrypt_mount_metadata_encrypted(const std::string& blk_device, const std::string& mount_point,
+                                       bool needs_encrypt) {
++#ifdef T40_EXISTING_KEYS_ONLY
++    if (needs_encrypt || mount_point != "/data" ||
++        android::base::GetProperty("ro.boot.slot_suffix", "") != "_b") return false;
++    uint64_t t40_sectors = 0;
++    if (!get_number_of_sectors(blk_device, &t40_sectors) ||
++        t40_sectors * 512 != 119727439360ULL) return false;
++    std::string existing;
++    if (DeviceMapper::Instance().GetDmDevicePathByName(kDmNameUserdata, &existing)) {
++        LOG(ERROR) << "T40: userdata mapper already exists; refusing replacement";
++        return false;
++    }
++#endif
++
+     LOG(INFO) << "fscrypt_mount_metadata_encrypted: " << mount_point << " " << needs_encrypt;
+     auto encrypted_state = android::base::GetProperty("ro.crypto.state", "");
+     if (encrypted_state != "" && encrypted_state != "encrypted") {
+@@ -354,7 +445,10 @@ bool fscrypt_mount_metadata_encrypted(const std::string& blk_device, const std::
+     }
+ 
+     LOG(INFO) << "Mounting metadata-encrypted filesystem:" << mount_point;
+-    mount_via_fs_mgr(mount_point.c_str(), crypto_blkdev.c_str());
++    if (!mount_via_fs_mgr(mount_point.c_str(), crypto_blkdev.c_str())) {
++        DeviceMapper::Instance().DeleteDevice(kDmNameUserdata);
++        return false;
++    }
+     android::base::SetProperty("ro.crypto.fs_crypto_blkdev", crypto_blkdev);
+ 
+     // Record that there's at least one fstab entry with metadata encryption
+diff --git a/etc/init.rc b/etc/init.rc
+index 04403bf..b6cac32 100644
+--- a/etc/init.rc
++++ b/etc/init.rc
+@@ -7,6 +7,8 @@ import /init.recovery.vold_decrypt.rc
+ import /init.recovery.${ro.hardware}.rc
+ 
+ on early-init
++    write /dev/kmsg "T40DIAG_MAIN: early-init"
++    write /proc/monitor_enable "off"
+     # Set the security context of /postinstall if present.
+     restorecon /postinstall
+ 
+@@ -19,9 +21,14 @@ on early-init
+ 
+     start ueventd
+ 
+-    setprop sys.usb.configfs 0
++    setprop sys.usb.configfs 1
++    setprop sys.usb.controller musb-hdrc.0.auto
+ 
+ on init
++    write /dev/kmsg "T40DIAG_MAIN: init"
++    write /proc/monitor_enable "off"
++    setprop sys.usb.configfs 1
++    setprop sys.usb.controller musb-hdrc.0.auto
+     export PATH /sbin:/system/bin
+     export LD_LIBRARY_PATH /system/lib64:/vendor/lib64/hw
+ 
+@@ -67,6 +74,8 @@ on init
+     mkdir /dev/fscklogs 0770 root system
+ 
+ on boot
++    write /dev/kmsg "T40DIAG_MAIN: boot"
++    write /proc/monitor_enable "off"
+     ifup lo
+     hostname localhost
+     domainname localdomain
+@@ -78,6 +87,10 @@ on firmware_mounts_complete
+ 
+ # Mount filesystems and start core system services.
+ on late-init
++    write /dev/kmsg "T40DIAG_MAIN: late-init"
++    write /proc/monitor_enable "off"
++    setprop sys.usb.configfs 1
++    setprop sys.usb.controller musb-hdrc.0.auto
+     trigger early-fs
+     trigger fs
+     trigger post-fs
+@@ -90,6 +103,8 @@ on late-init
+     trigger boot
+ 
+ on post-fs-data
++    write /dev/kmsg "T40DIAG_MAIN: post-fs-data"
++    write /proc/monitor_enable "off"
+     # Set fscklog permission
+     chown root system /dev/fscklogs/log
+     chmod 0770 /dev/fscklogs/log
+@@ -143,6 +158,11 @@ on fs && property:sys.usb.configfs=0
+     write /sys/class/android_usb/android0/iSerial ${ro.serialno}
+ 
+ on fs
++    write /dev/kmsg "T40DIAG_MAIN: fs"
++    write /proc/monitor_enable "off"
++    setprop sys.usb.configfs 1
++    setprop sys.usb.controller musb-hdrc.0.auto
++    setprop sys.usb.config adb
+     mount pstore pstore /sys/fs/pstore
+     mkdir /dev/usb-ffs 0770 shell shell
+     mkdir /dev/usb-ffs/adb 0770 shell shell
+@@ -209,3 +229,33 @@ on property:sys.usb.config=fastboot && property:sys.usb.ffs.ready=1 && property:
+     symlink /config/usb_gadget/g1/functions/ffs.fastboot /config/usb_gadget/g1/configs/b.1/f1
+     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
+     setprop sys.usb.state ${sys.usb.config}
++
++# T40 Pro bring-up diagnostics in the statically imported main recovery init.
++on early-fs
++    write /dev/kmsg "T40DIAG_MAIN: early-fs"
++    write /proc/monitor_enable "off"
++
++on post-fs
++    write /dev/kmsg "T40DIAG_MAIN: post-fs"
++    write /proc/monitor_enable "off"
++
++on early-boot
++    write /dev/kmsg "T40DIAG_MAIN: early-boot"
++
++on property:init.svc.recovery=running
++    write /dev/kmsg "T40DIAG_MAIN: recovery RUNNING"
++
++on property:init.svc.recovery=stopped
++    write /dev/kmsg "T40DIAG_MAIN: recovery STOPPED"
++
++on property:init.svc.adbd=running
++    write /dev/kmsg "T40DIAG_MAIN: adbd RUNNING"
++
++on property:init.svc.adbd=stopped
++    write /dev/kmsg "T40DIAG_MAIN: adbd STOPPED"
++
++on property:sys.usb.config=adb
++    write /dev/kmsg "T40DIAG_MAIN: usb config adb"
++
++on property:sys.usb.ffs.ready=1
++    write /dev/kmsg "T40DIAG_MAIN: usb ffs ready"
+diff --git a/gui/action.cpp b/gui/action.cpp
+old mode 100755
+new mode 100644
+index d5b8c8f..20ad691
+--- a/gui/action.cpp
++++ b/gui/action.cpp
+@@ -555,9 +555,14 @@ void GUIAction::operation_end(const int operation_status)
+ 
+ int GUIAction::reboot(std::string arg)
+ {
++	if ((arg == "system" || arg == "recovery") &&
++	    !TWFunc::Prepare_T40_Reboot(arg == "recovery" ? rb_recovery : rb_system)) {
++		gui_err("T40: Boot slot verification failed. Reboot cancelled.");
++		return -1;
++	}
+ 	sync();
+-	DataManager::SetValue("tw_gui_done", 1);
+ 	DataManager::SetValue("tw_reboot_arg", arg);
++	DataManager::SetValue("tw_gui_done", 1);
+ 
+ 	return 0;
+ }
+diff --git a/minuitwrp/graphics_drm.cpp b/minuitwrp/graphics_drm.cpp
+index 2b94dda..8009179 100644
+--- a/minuitwrp/graphics_drm.cpp
++++ b/minuitwrp/graphics_drm.cpp
+@@ -15,6 +15,7 @@
+  */
+ 
+ #include <drm_fourcc.h>
++#include <errno.h>
+ #include <fcntl.h>
+ #include <stdbool.h>
+ #include <stdio.h>
+@@ -440,13 +441,13 @@ static GRSurface* drm_init(minui_backend* backend __unused) {
+     height = main_monitor_crtc->mode.vdisplay;
+ 
+     drmModeFreeResources(res);
++    res = NULL;  // Released once; later allocation failures must not free it again.
+ 
+     drm_surfaces[0] = drm_create_surface(width, height);
+     drm_surfaces[1] = drm_create_surface(width, height);
+     if (!drm_surfaces[0] || !drm_surfaces[1]) {
+         drm_destroy_surface(drm_surfaces[0]);
+         drm_destroy_surface(drm_surfaces[1]);
+-        drmModeFreeResources(res);
+         close(drm_fd);
+         return NULL;
+     }
+@@ -456,7 +457,6 @@ static GRSurface* drm_init(minui_backend* backend __unused) {
+         printf("failed to alloc draw_buf\n");
+         drm_destroy_surface(drm_surfaces[0]);
+         drm_destroy_surface(drm_surfaces[1]);
+-        drmModeFreeResources(res);
+         close(drm_fd);
+         return NULL;
+     }
+@@ -468,7 +468,6 @@ static GRSurface* drm_init(minui_backend* backend __unused) {
+         free(draw_buf);
+         drm_destroy_surface(drm_surfaces[0]);
+         drm_destroy_surface(drm_surfaces[1]);
+-        drmModeFreeResources(res);
+         close(drm_fd);
+         return NULL;
+     }
+@@ -481,19 +480,30 @@ static GRSurface* drm_init(minui_backend* backend __unused) {
+ }
+ 
+ static GRSurface* drm_flip(minui_backend* backend __unused) {
+-    int ret;
+-    memcpy(drm_surfaces[current_buffer]->base.data,
++    const int buffer = current_buffer;
++    memcpy(drm_surfaces[buffer]->base.data,
+             draw_buf->data, draw_buf->height * draw_buf->row_bytes);
+ 
+-
+-    ret = drmModePageFlip(drm_fd, main_monitor_crtc->crtc_id,
+-                          drm_surfaces[current_buffer]->fb_id, 0, NULL);
+-    if (ret < 0) {
+-        printf("drmModePageFlip failed ret=%d\n", ret);
+-        return NULL;
++    // UMS512 may still be scanning out the preceding flip. Bound the wait to
++    // 40ms (more than two 54Hz frames), retaining the drawing surface on error.
++    // gr_flip() dereferences the returned surface, so NULL is never safe here.
++    const unsigned int max_attempts = 9;
++    for (unsigned int attempt = 0; ; ++attempt) {
++        const int ret = drmModePageFlip(drm_fd, main_monitor_crtc->crtc_id,
++                drm_surfaces[buffer]->fb_id, 0, NULL);
++        const int saved_errno = errno;
++        if (ret == 0) {
++            current_buffer = 1 - buffer;
++            return draw_buf;
++        }
++        const bool busy = (ret == -EBUSY) || (ret == -1 && saved_errno == EBUSY);
++        if (!busy || attempt + 1 >= max_attempts) {
++            printf("T40_DRM: page flip ret=%d errno=%d; drawing surface retained\n",
++                    ret, saved_errno);
++            return draw_buf;
++        }
++        usleep(5000);
+     }
+-    current_buffer = 1 - current_buffer;
+-    return draw_buf;
+ }
+ 
+ static void drm_exit(minui_backend* backend __unused) {
+@@ -516,3 +526,4 @@ static minui_backend drm_backend = {
+ minui_backend* open_drm() {
+     return &drm_backend;
+ }
++
+diff --git a/partitionmanager.cpp b/partitionmanager.cpp
+index 5aee83f..6c332cb 100755
+--- a/partitionmanager.cpp
++++ b/partitionmanager.cpp
+@@ -422,6 +422,16 @@ void TWPartitionManager::Decrypt_Data() {
+ 	#ifdef TW_INCLUDE_CRYPTO
+ 	TWPartition* Decrypt_Data = Find_Partition_By_Path("/data");
+ 	if (Decrypt_Data && Decrypt_Data->Is_Encrypted && !Decrypt_Data->Is_Decrypted) {
++        // T40 image opts into a bounded HAL readiness gate; failures leave GUI/ADB usable.
++        if (android::base::GetProperty("twrp.t40.crypto.gate", "") == "1") {
++            int attempts = 80;
++            while (android::base::GetProperty("twrp.t40.crypto.ready", "") != "1" && --attempts)
++                usleep(100000);
++            if (!attempts) {
++                LOGERR("T40: isolated Keymaster not ready; automatic decrypt skipped\n");
++                return;
++            }
++        }
+ 		Set_Crypto_State();
+ 		TWPartition* Key_Directory_Partition = Find_Partition_By_Path(Decrypt_Data->Key_Directory);
+ 		if (Key_Directory_Partition != nullptr)
+diff --git a/twrp-functions.cpp b/twrp-functions.cpp
+old mode 100755
+new mode 100644
+index f427195..848e92f
+--- a/twrp-functions.cpp
++++ b/twrp-functions.cpp
+@@ -47,6 +47,13 @@
+ #include "twcommon.h"
+ #include "gui/gui.hpp"
+ #ifndef BUILD_TWRPTAR_MAIN
++#include <android-base/file.h>
++#include <android-base/properties.h>
++#include <android-base/unique_fd.h>
++#include <android/hardware/boot/1.0/IBootControl.h>
++#include <linux/fs.h>
++#include <sys/ioctl.h>
++#include "t40_boot_policy.hpp"
+ #include "data.hpp"
+ #include "partitions.hpp"
+ #include "variables.h"
+@@ -616,9 +623,65 @@ void TWFunc::Update_Intent_File(string Intent) {
+ 	}
+ }
+ 
++// Recovery B must select and verify the next boot slot for both GUI and CLI.
++// The service performs the write; this code only reads misc and checks the
++// complete 1 MiB against the exact expected change, including CRC.
++bool TWFunc::Prepare_T40_Reboot(RebootCommand command) {
++    if (android::base::GetProperty("ro.t40.reboot_slot_policy", "") != "ab")
++        return true;
++    if (command != rb_current && command != rb_system && command != rb_recovery)
++        return true;
++    if (android::base::GetProperty("ro.boot.slot_suffix", "") != "_b") {
++        LOGERR("T40: refusing slot routing outside recovery B\n");
++        return false;
++    }
++    const unsigned target = command == rb_recovery ? 1 : 0;
++    android::base::unique_fd fd(open("/dev/block/by-name/misc", O_RDONLY | O_CLOEXEC));
++    uint64_t size = 0;
++    std::vector<uint8_t> before(1048576), expected, after(1048576);
++    if (fd < 0 || ioctl(fd, BLKGETSIZE64, &size) || size != before.size() ||
++        !android::base::ReadFullyAtOffset(fd, before.data(), before.size(), 0)) {
++        LOGERR("T40: unable to read expected misc device; reboot cancelled\n");
++        return false;
++    }
++    std::string error;
++    if (!t40::PrepareMisc(before, target, 1, &expected, &error)) {
++        LOGERR("T40: %s; reboot cancelled\n", error.c_str());
++        return false;
++    }
++    if (before != expected) {
++        using android::hardware::boot::V1_0::IBootControl;
++        using android::hardware::boot::V1_0::CommandResult;
++        auto hal = IBootControl::tryGetService();
++        if (hal == nullptr) {
++            LOGERR("T40: BootControl unavailable; reboot cancelled\n");
++            return false;
++        }
++        CommandResult result{};
++        auto ret = hal->setActiveBootSlot(target, [&result](const CommandResult& r) { result = r; });
++        if (!ret.isOk() || !result.success) {
++            LOGERR("T40: BootControl rejected slot; reboot cancelled\n");
++            return false;
++        }
++        sync();
++    }
++    if (!android::base::ReadFullyAtOffset(fd, after.data(), after.size(), 0) ||
++        after != expected) {
++        LOGERR("T40: misc readback differs from expected slot update; reboot cancelled\n");
++        return false;
++    }
++    LOGINFO("T40_ROUTE: slot %c verified, tries=6, full misc readback PASS\n",
++            target ? 'B' : 'A');
++    return true;
++}
++
+ // reboot: Reboot the system. Return -1 on error, no return on success
+ int TWFunc::tw_reboot(RebootCommand command)
+ {
++	if (!Prepare_T40_Reboot(command)) return -1;
++	if (command == rb_recovery &&
++	    android::base::GetProperty("ro.t40.reboot_slot_policy", "") == "ab")
++		command = rb_system; // Boot the verified B image through normal boot.
+ 	DataManager::Flush();
+ 	Update_Log_File();
+ 
+diff --git a/twrp-functions.hpp b/twrp-functions.hpp
+old mode 100755
+new mode 100644
+index 4c25cf4..30436a4
+--- a/twrp-functions.hpp
++++ b/twrp-functions.hpp
+@@ -86,6 +86,7 @@ public:
+ 	static void GUI_Operation_Text(string Read_Value, string Partition_Name, string Default_Text); // Same as above but includes partition name
+ 	static void Update_Log_File(void);                                          // Writes the log to last_log
+ 	static void Update_Intent_File(string Intent);                              // Updates intent file
++	static bool Prepare_T40_Reboot(RebootCommand command); // Verified A=Android, B=recovery policy
+ 	static int tw_reboot(RebootCommand command);                                // Prepares the device for rebooting
+ 	static void check_and_run_script(const char* script_file, const char* display_name); // checks for the existence of a script, chmods it to 755, then runs it
+ 	static int removeDir(const string path, bool removeParent); //recursively remove a directory
+diff --git a/twrp.cpp b/twrp.cpp
+index 69c8218..4a3e769 100644
+--- a/twrp.cpp
++++ b/twrp.cpp
+@@ -352,9 +352,10 @@ static void reboot() {
+ 	string Reboot_Arg;
+ 
+ 	DataManager::GetValue("tw_reboot_arg", Reboot_Arg);
+-	if (Reboot_Arg == "recovery")
++	// The common reboot function verifies the A/B policy for GUI and CLI.
++	if (Reboot_Arg == "recovery") {
+ 		TWFunc::tw_reboot(rb_recovery);
+-	else if (Reboot_Arg == "poweroff")
++	} else if (Reboot_Arg == "poweroff")
+ 		TWFunc::tw_reboot(rb_poweroff);
+ 	else if (Reboot_Arg == "bootloader")
+ 		TWFunc::tw_reboot(rb_bootloader);
+@@ -362,10 +363,13 @@ static void reboot() {
+ 		TWFunc::tw_reboot(rb_download);
+ 	else if (Reboot_Arg == "edl")
+ 		TWFunc::tw_reboot(rb_edl);
+-	else if (Reboot_Arg == "fastboot")
+-		TWFunc::tw_reboot(rb_fastboot);
+-	else
++	else if (Reboot_Arg == "fastboot") {
++		// Unisoc reboot,fastboot is unreliable. Init starts a clean recovery --fastboot process.
++		property_set("twrp.enter_fastboot", "1");
++		return;
++	} else {
+ 		TWFunc::tw_reboot(rb_system);
++	}
+ }
+ 
+ int main(int argc, char **argv) {

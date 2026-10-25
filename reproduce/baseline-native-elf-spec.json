@@ -1,0 +1,482 @@
+{
+  "system/bin/android.hardware.boot@1.0-service": {
+    "interface_sha256": "f9012c4a17e12f9c51286f34d970d998d70414f84b4baf5fd93f6cb0bef438ac",
+    "byte_sha256": "0c0ddadfed49c80191f1c6cd694f6843d3ad5de03a7112086171e0a8ddb6c251"
+  },
+  "system/bin/android.hardware.boot@1.1-service": {
+    "interface_sha256": "65f60c2e738c42c15c9249de6c335be0f3a089a00321ca5851e3d1b430f344b7",
+    "byte_sha256": "399df33e90b1f9ff7e94a199eb750c1c9178d27f7c1b09409a70c4995f8a4ade"
+  },
+  "system/bin/android.hardware.health@2.0-service": {
+    "interface_sha256": "d9699ae9beb119ee17c15f330e227dffb48969e539fce0281b474669cbbc352b",
+    "byte_sha256": "590940bb8fb78d1882dc2290e6efba072ef0f2e31111d1c069333a1d11f9c8f2"
+  },
+  "system/bin/android.hardware.health@2.1-service": {
+    "interface_sha256": "8c1b71f77532fc24929457c8b6e2c1bec5a7a068c02dbc30bc143019db0451ba",
+    "byte_sha256": "1ad6e7e68663b9eff4d2b5bfa1a47bc428b94792bbe670bf58ccb2e75d941bd4"
+  },
+  "system/bin/awk": {
+    "interface_sha256": "0a38712eec73dfa9fad16816038f5c7d418b482a9d6aab46732f8e43de5bf50b",
+    "byte_sha256": "c631e2d157103992be933b163189a0053edd65d6c48847702a9644aa76bf4445"
+  },
+  "system/bin/bash": {
+    "interface_sha256": "706d437ca531b017d8ae13cf17af192feafe270fe31cbe2262827cc3a95ef6ba",
+    "byte_sha256": "6bf0b30870d3578bf83e339cc90c82c284719be22be4b2acb6c0d1b3d56436d0"
+  },
+  "system/bin/bc": {
+    "interface_sha256": "58218cdbe58232000f1d8a5622794c21937e64289a1106921fa48f9f2c1c0fd5",
+    "byte_sha256": "2532186f4d11f3970b9a3f21fc83530d699724a332ef6154599dd1a1cd7bd2dc"
+  },
+  "system/bin/bu": {
+    "interface_sha256": "e122ebb869d9745ceeab728a491f68b50d9367eb1699414bffeaeb0608ac3153",
+    "byte_sha256": "c83f71e267bc4b34249e70d064f386b3617c226a8d0113dca0598ae48ea651c3"
+  },
+  "system/bin/dump_image": {
+    "interface_sha256": "d1fa6bff8af0cd1ed162938b5932321fa670a717eda0c36f472b412b6c2489b4",
+    "byte_sha256": "1c9eeaa67cad891cc1c0f32259a11c5c0a34f8c1c8bb2ecb9548f887400f1870"
+  },
+  "system/bin/e2fsck": {
+    "interface_sha256": "aa92c8caba8d9fca929871dd4bd0ca9839964f9b337479fc36dcbbb5768fe01f",
+    "byte_sha256": "399d7af19852300b9a9904eed37fc6893b8cbe38aa787c20820db92a8ed9ae27"
+  },
+  "system/bin/e2fsdroid": {
+    "interface_sha256": "d8dbced3ba273339b900048dd24a66a4c3ab75e063491e4d7c5564ab6ebd17b2",
+    "byte_sha256": "cf06fff5ae1b9c49b04b97f78dbc3b78f4d598207f78b756872c5bf364580605"
+  },
+  "system/bin/erase_image": {
+    "interface_sha256": "3efaccf11aca96c9e1bf7aaa085d1d79de796861f093799347b4424dff046f38",
+    "byte_sha256": "397587944a606ccdca03552ca62d55acfb25f20a7f4c128acac4f3469813b3fe"
+  },
+  "system/bin/exfat-fuse": {
+    "interface_sha256": "7cb806ae62c4d1f2e9c1919bb45119833cf7d76c3ee74e0ccb94202880020301",
+    "byte_sha256": "6612c9d2ec4ed723ad1be5e04efe95bff05f597afe87903418716f20c9f2b359"
+  },
+  "system/bin/fastbootd": {
+    "interface_sha256": "5411bb738b3b31c82b137dde024335688f9db03457d98672cbe2aebdba07f644",
+    "byte_sha256": "03352c5a014d07693207e7331bd897c5d9f89becbddff0594e1badc47bc68d47"
+  },
+  "system/bin/fatlabel": {
+    "interface_sha256": "b93ec2bbabd1527858f88b8b1c33af853965660a5374deeea298d7d851c41a60",
+    "byte_sha256": "1dae4e4dd4b21f75adae9df729e0b1d5d8f5e5df21fc9f39890af390e1e697c0"
+  },
+  "system/bin/flash_image": {
+    "interface_sha256": "e644532b3b1abd9874fd3927f97827a601cb02a9321fc99b0c5a8f06b7a18e73",
+    "byte_sha256": "bc8a37e49f032622770d760ad369c4fa905c346c6b51cf8790e0af536eccea06"
+  },
+  "system/bin/fsck.exfat": {
+    "interface_sha256": "9d225e74d7f42a36175efca8ddd1341d1c3c13e84ed0f46041ffce00927646a8",
+    "byte_sha256": "53e99052b8be08e5407dc22f8388d51028478e73325289a1ae0d01671f47e526"
+  },
+  "system/bin/fsck.f2fs": {
+    "interface_sha256": "c3b289b82158d5febda5b9a5c0130416b2cfaed7c66e24f8e478fed1d5efb576",
+    "byte_sha256": "4c89966a08e7e9c22c7789edd3cfe07d0769d5c6088264cab1efba3f326f28ea"
+  },
+  "system/bin/fsck.fat": {
+    "interface_sha256": "37c0b00bf3051212abbc14f9ebe1d10f8c7d561835ce1c2742c1e24e79c1e775",
+    "byte_sha256": "4353b56950e27cc86733d9aedca0b2e472597031b1094bfd9c8c6e846cb0a763"
+  },
+  "system/bin/hwservicemanager": {
+    "interface_sha256": "26733b160a2b224dfb232aecc66ec41a25956845bc998cfbbd8fa3cb42be76a5",
+    "byte_sha256": "dca803a00c117bb448a7570ac462a1aa34947b35fb06ae47d3dd33be5f3f4487"
+  },
+  "system/bin/keystore": {
+    "interface_sha256": "d40c8e6c14da01fb8a153dc5704c3403870cc26f5e427d79e3dfb73d1f4913d9",
+    "byte_sha256": "53a65a9bc6c7874ed65eaeaaa3036f7ba334a6adece27a81f9903cd65306ba8b"
+  },
+  "system/bin/keystore_cli_v2": {
+    "interface_sha256": "2677631f4d77bd97ef9b3925bfa85448f8c2453630814dae05a27580e373d650",
+    "byte_sha256": "385a76fe90c45188457d9b60c57f5e29de13c091a8f425bee62a86e365b0a009"
+  },
+  "system/bin/logcat": {
+    "interface_sha256": "bbc9e7d73eda7fad52f645a962432e788c03c39a60b06235cb5c00af9d33f955",
+    "byte_sha256": "0ad0b5e0dfff9313855062e8b5893dab595043b2cc141f6af26cb34a754d5d32"
+  },
+  "system/bin/logd": {
+    "interface_sha256": "052cfb4aa92ddc31017e108be679aab81c8b1c96bc03ea8d6dca6a702a7d6ffc",
+    "byte_sha256": "962e8139e820049cbcfc05b77989d6df3bd2b9a4d8760c320049ecf7c518952c"
+  },
+  "system/bin/magiskboot": {
+    "interface_sha256": "1bf3e0eaf3e930e9e93b53fddc12b5dff90fa3d6590fc0ce6172039944b13f6e",
+    "byte_sha256": "db14923ba3ff784c360cf68781cbcc08dd45d5a3e92e6b19071e05eac7359431"
+  },
+  "system/bin/make_f2fs": {
+    "interface_sha256": "2a2ff919c31fd9b20df20bad2bb28667dd12aecce71e9d213c6f683cb2375b13",
+    "byte_sha256": "25134ff17e6d03a9c96913148bbac05a5b583220cc90054b244c6cdab7a6da31"
+  },
+  "system/bin/minadbd": {
+    "interface_sha256": "d06ff75be82b212eb1c61101dbd71c50a7a7248e60b242172286893c6b92ef72",
+    "byte_sha256": "f39fbb87e1ca555a138bf2b0e3b34fbdbf73d27c4930110fd97384a65598685e"
+  },
+  "system/bin/mke2fs": {
+    "interface_sha256": "f0b90b157626a34bab2c5ae53f620c38ee1e7c5e11b1e7343eb2104b4526f3a7",
+    "byte_sha256": "0b76cca43ce777bfe00626c190e4c035824f4c8a8a9a80b7bc79a97508a09adf"
+  },
+  "system/bin/mkexfatfs": {
+    "interface_sha256": "bf67124c62bdc2deb258e27fca660293723ea9a971db092a10f980920a4fcac6",
+    "byte_sha256": "219c944dba263e462fd60b4e778ec7c32b96c15c62e72d2d350509abd2e6b178"
+  },
+  "system/bin/mkfs.fat": {
+    "interface_sha256": "5306e19fab6e114f72c43ffb2a2eacd5e0cf43b331ab5d40bdd7f9febfb3d418",
+    "byte_sha256": "a4abf39fc74111f7794f3772114a6e682667d2973da2e965d639e7fc95ca1722"
+  },
+  "system/bin/nano": {
+    "interface_sha256": "2c5e8292e3ac21bf17675d732e3eb5485f7b575119484ceb923bcb2321be7c50",
+    "byte_sha256": "036f88750959f7d9aab6db6627085f2f9ace9e90354af17feb32fcc827174dde"
+  },
+  "system/bin/pigz": {
+    "interface_sha256": "2235c37e2293d98fc6f901b9934983b928cd9bf35891b302b2953c4e5f2d3549",
+    "byte_sha256": "956fa99e416339d1d3459cc59010fa8d23d9814e788c2f4ea321a9aa5652b55c"
+  },
+  "system/bin/reboot": {
+    "interface_sha256": "d118b19b45b343bd2c93744e85f76f9c301207ef5c4cfdb89d24707fa9e75600",
+    "byte_sha256": "d3bf46ec9af766f64d85f7ff0360fc6ad25a9f51475d3988ca7f6d2d576d31b0"
+  },
+  "system/bin/recovery": {
+    "interface_sha256": "19871c9357f964bb5a373f9c17de1ec0d1323a062daeba24ebdb19e08839a886",
+    "byte_sha256": "1eb7f7d7db9dbeecdbc2c2a15c3d6f6fb730fa43480dac1ada0ab2742aa35534"
+  },
+  "system/bin/resetprop": {
+    "interface_sha256": "1dbf54fcd6452a684d832e28e4fd1cbcdfd41d07bc9d30980c696e30e20ac814",
+    "byte_sha256": "922c74d197899b80f87ec898662a978e22aa9d988592d2165142e7483e6f6b89"
+  },
+  "system/bin/resize2fs": {
+    "interface_sha256": "391fddd7ae5d427ec6dec709d60015e7d052f72a0a11f4081d935485ae3df0d6",
+    "byte_sha256": "60ab632c11484403f4ae52834842039017f31a0c813fd89d4b155a13ea8b48d3"
+  },
+  "system/bin/servicemanager": {
+    "interface_sha256": "cc918584c3f0d7f958c1e9ae7a9c5b8b3b0aeed34f667b0bb92f726ee0929ccd",
+    "byte_sha256": "5f13b41c242ed8c56b283a77b96c74cb22d4c022838c876c7daf7498ef866441"
+  },
+  "system/bin/sgdisk": {
+    "interface_sha256": "8f2ab0f4d9c0d524b3c7e1aa05ea935abdaf8092542e2f58b10652bd95a68df3",
+    "byte_sha256": "fcde4731664dbda7e6ca5d32c1b8046c6092e9d397c36988e3bfd9a0fe6aa7c0"
+  },
+  "system/bin/sh": {
+    "interface_sha256": "ef983b85b95a7a7924adc67dc4bf3085bd6bdab0c0bdf46bc258e26e760f7099",
+    "byte_sha256": "b7d4cae1c1c084eb2adb439a9dea2aa2dd96df575cef8c2031231d55b4cbc51a"
+  },
+  "system/bin/simg2img": {
+    "interface_sha256": "be3e65972420d44a8899d51d45c78c4392ddf49f723a19b78c820a7997fe6476",
+    "byte_sha256": "d4b39f7444d7ce6e6bf7aac581ce3d6a77c2b27362992fa1654b639a2b1d9df7"
+  },
+  "system/bin/sload_f2fs": {
+    "interface_sha256": "9d71f7fb6f7457e519128c61b142208987880da32941bb33501b422b673073a1",
+    "byte_sha256": "58e57beb437f1d0be028066438c6d40ebef1491fd72f297e7ee14e8966515cdf"
+  },
+  "system/bin/toolbox": {
+    "interface_sha256": "d7574aa5e0550b9948d8fe2b0c7435f26a26dd2925be43317d464bcca6086e7d",
+    "byte_sha256": "d7e965875ab923dfdbe7417a89557e81e671c033eef5b4b7f5ac0aea9352403b"
+  },
+  "system/bin/toybox": {
+    "interface_sha256": "52660255d382d2d0c6176f8110a85bda2b82ca660261947bbb11ffbf7a8269ec",
+    "byte_sha256": "40928264c8da1868ac9eece0f04ab235cea0956d7ce7cd9b2dd0ceab950da9aa"
+  },
+  "system/bin/tune2fs": {
+    "interface_sha256": "d4fe11d1ed838d45404af11f6e86a2e4310b002934f197e8d26162adc9cb295a",
+    "byte_sha256": "e07fdfffb0876b86dd65e3a41ed4687c9e7fcdc0fe9a49e911a716c66947bcc8"
+  },
+  "system/bin/twrp": {
+    "interface_sha256": "820b9fd0b9520bffed211fac0f41f777084ede9fcf51f461b08101c265256278",
+    "byte_sha256": "990394e3dd670a07fb1ad72b527214a7be15bff3f07ee823a5134aa9890d1a5c"
+  },
+  "system/bin/update_engine_sideload": {
+    "interface_sha256": "db3637b64417ae44e10a79800fe938b37faa8ed56f53b5804257743fb2470cda",
+    "byte_sha256": "766318b4f3cd03780931bdd7933904d515d2d952f1389fa1b738f072a5e5454b"
+  },
+  "system/bin/vndservicemanager": {
+    "interface_sha256": "1026cb217ead662d4d19f1b78ce3182131af4aa9ec235278f56b4009515b2604",
+    "byte_sha256": "2d6742c75849c1ed5c800e0cc7b315f91bccaddc1f4d7b991400332249e2ca04"
+  },
+  "system/bin/vold_prepare_subdirs": {
+    "interface_sha256": "28ed9abed19c5ac2cfb3719296c6c7fd2bf3eabfcb343e013a2f3d1a16a77ecb",
+    "byte_sha256": "d378eb1058545034b1f9a17b15980f2a1c01023e6074cf74c6fcc01bb46b36a5"
+  },
+  "system/bin/watchdogd": {
+    "interface_sha256": "823b41ded79bc2fe706e7850c3bb557dc05e034f23abf9c760cae9eb3d8532b6",
+    "byte_sha256": "8a878731e6aa34d084c0f696936f51ee8eb3c7ab636bdf30e76a5b5f047c3d98"
+  },
+  "system/bin/ziptool": {
+    "interface_sha256": "67e5a6784d6686d6845591c705b191de47bd045849f1db8bb518955edffebf6e",
+    "byte_sha256": "7e11244887a4cd860af7f275b40194e32375ca63f40f60bb8fc779326cca2ec9"
+  },
+  "system/lib64/android.frameworks.stats@1.0.so": {
+    "interface_sha256": "8cffeb333a64977bf1e3709649bc1c91e43f248efb358605411cef73dc91889a",
+    "byte_sha256": "af0d60fcfacbe853fff843e039f1fb277b57926d2d085f3357a3cbd17bd30255"
+  },
+  "system/lib64/android.hidl.token@1.0.so": {
+    "interface_sha256": "45c0c025032240d8422b57cd924b88bb5c3335dc8dfe4e510cb9d004ad680c8a",
+    "byte_sha256": "f8053bca836667a4b551ab602116c658be53a349761c17e3c5571563437cc144"
+  },
+  "system/lib64/hw/android.hardware.health@2.0-impl-2.1.so": {
+    "interface_sha256": "41eed76fef07de9a11cc09b781a5932451cfb722e2dc08538f018020a7db6573",
+    "byte_sha256": "652f86a760a6418a32693f6e2457bb3a8899e5496e280511e3eecc10add97819"
+  },
+  "system/lib64/ld-android.so": {
+    "interface_sha256": "dd1fea6782f408bc5ccc62dd4019f02579cfa05492150e2230b4a65b5fe257c9",
+    "byte_sha256": "dc220529f3bbe15c3f3286d45aa2c93046c72dcc156e0b763160eb97fbdf70b1"
+  },
+  "system/lib64/libandroid_runtime_lazy.so": {
+    "interface_sha256": "fb03d36237c9eb5943b6f94a5845ce8d3b7f191216e4a0312d98f154ac6197c0",
+    "byte_sha256": "ede117b77e0e07160ae6f781af96f811ec1a5b2e23506949d5f4b79a2a67b296"
+  },
+  "system/lib64/libaosprecovery.so": {
+    "interface_sha256": "db8e0e1547b781cb0675f7381a32f8eab3e49b8e97076e1df2ca7c6c75e58a42",
+    "byte_sha256": "705a01f3324d9b08fa7924b1c154b111f0848ab8898fd1e6a049450079bf8148"
+  },
+  "system/lib64/libbinder.so": {
+    "interface_sha256": "e43c5ff4ac597401e363291afa4a7c45bb8b2a5ebdbf05b9e44688b7ee283c73",
+    "byte_sha256": "a288e9529c688ca0a6f617fb73b5fa41a8234b96845afd5a1eac1a69ffd54b1f"
+  },
+  "system/lib64/libbinder_ndk.so": {
+    "interface_sha256": "392fd8e3615e078415d5e4f8ea67ed52df7f0e4e8bf1d70f90d97e1ed5f59e1f",
+    "byte_sha256": "4368ce13e5758654439478b03c97fb679115a6060381bc4c527dc7643e361fc3"
+  },
+  "system/lib64/libblkid.so": {
+    "interface_sha256": "64b3ee7169524fc8a25b66699c4d830a38e95a9cc6382adb1e82ac4e7ae04976",
+    "byte_sha256": "9b191125109f7f2cec100b492ff3b13365ed32c38d0c834c81030dc433d26dc4"
+  },
+  "system/lib64/libbmlutils.so": {
+    "interface_sha256": "3df5429a50c6353b38f8502a9f08e0ac5b17ea1647cab74f9a604b864f89d3b1",
+    "byte_sha256": "b95cf4cf463faba64cf4b2a932a5ffab7fc8cb9f779426a8e303ec85231c5b17"
+  },
+  "system/lib64/libcap.so": {
+    "interface_sha256": "b29747cef856b649b20c1f2230437227448c51e3473ea7d9f13f9fa487446ea1",
+    "byte_sha256": "d65d3f8e210ee6046b79992b811b4c65486904c2b7a13bde25cbf0e990559ea8"
+  },
+  "system/lib64/libchrome.so": {
+    "interface_sha256": "047aaa16188d9f8011b2ec352d1c07568c00cf36e67ecdbebe347cab174fd3d0",
+    "byte_sha256": "0f447007e7c608536a47e4e2f0bfae733ec9e9c06eb29a8c064139e3a66770db"
+  },
+  "system/lib64/libclang_rt.ubsan_standalone-aarch64-android.so": {
+    "interface_sha256": "e11c12da091990ba4401b7c93ec9c71483763006f68e29573e7a4253ef3ec1c3",
+    "byte_sha256": "9275611767f1b4300997709e8ffe03ef3aacfc494631699ba23e0d8e68b26b14"
+  },
+  "system/lib64/libcrecovery.so": {
+    "interface_sha256": "a02abb786271df2949514327b4329a7b65926a2888dbaf9086c17f8d602d2468",
+    "byte_sha256": "574729311e3e5428b0460bff3273aabdd54ab25508853229619e64a00b670d54"
+  },
+  "system/lib64/libdl_android.so": {
+    "interface_sha256": "5bc731fe2b909ad5f2181c2db0681267e22cfe4e8b339ba5ae2858f10805604e",
+    "byte_sha256": "99a059bbb1a6abd1465a107e098069440011af254746a27fa44fd2c2b7496d51"
+  },
+  "system/lib64/libevent.so": {
+    "interface_sha256": "c860416cafe035313a03608537e2087e0241fc888c76b614abfb4ed8c8f22f9d",
+    "byte_sha256": "de855cc0ef81ffe10eafa4187a17843466ff978fd71880615fac52d75b534e47"
+  },
+  "system/lib64/libexfat_twrp.so": {
+    "interface_sha256": "2559e48c199db0613c822416bb1184a1186d6062933c6758d836d9925c08db2c",
+    "byte_sha256": "9a79ac6d7f34e673a1638257bdc2294c0a3daa6527c1d9c90a8ecaa5eb24250a"
+  },
+  "system/lib64/libext2_profile.so": {
+    "interface_sha256": "1e978265b2c85bf2b0b4537242daf2940a939dd9bce8237440427365389c3ab1",
+    "byte_sha256": "0d79adb9720862b761f1db2b33414ccebd405d2f5f7be9bec532a5c49db9f7d5"
+  },
+  "system/lib64/libflashutils.so": {
+    "interface_sha256": "f50e5cc192eafd137ca43a631753e61445af5ab3504a3854cd3daa85c51c0ade",
+    "byte_sha256": "c0c31aed9f93966059e2f253df8049df16397e66a058096d5cfabdc0b5f27c9e"
+  },
+  "system/lib64/libfscrypt.so": {
+    "interface_sha256": "ad5d7fcdf154f6900416b8c558d15fee9a9db031e64bf9e42d63312f94103771",
+    "byte_sha256": "1f156b2fd5398982cdc78065b9ef28c675d1cbb708908e53c07f73d56f8cd0b5"
+  },
+  "system/lib64/libft2.so": {
+    "interface_sha256": "49487bcb14359d32a52e232cc2d6eb26eddef3bf19638a2ba5a39ae08112867c",
+    "byte_sha256": "4166d384a556d1d12df12e1dbb38618d9aaaaf9d57a80c5ee78f49f40653e32d"
+  },
+  "system/lib64/libhidltransport.so": {
+    "interface_sha256": "e59db62a463989218656e90814fe30ae54d6edae4ea8836d2d027d784510dfdd",
+    "byte_sha256": "5d7da3b45546b7cdacb96e82b8865ce4a5857882511c0b7041f914c97e58ac2f"
+  },
+  "system/lib64/libminuitwrp.so": {
+    "interface_sha256": "5681720b1a605deae51ea94a47926497e1dee54a44cf360501fac90fb68d8f5f",
+    "byte_sha256": "e324ee4265867509ce4fe51500f2ebc18ca2328e38eac9507f95af1bb0f09109"
+  },
+  "system/lib64/libmmcutils.so": {
+    "interface_sha256": "0300b2290fd1530f05a13cd8b0ef399d4a50a51d2ca2768e9a6811d99fb96073",
+    "byte_sha256": "37f3a61f1a2adf876e8ebb28a3b7eb5d5ecf5f71afe2468ea293b742eb1a4b1a"
+  },
+  "system/lib64/libmtdutils.so": {
+    "interface_sha256": "f49b58cd1089541e82b7d114e24361cce1bffb2345797195b757d6f841b08fbd",
+    "byte_sha256": "313d3822fcf0dc408d4e477828e38aebe4ceca8cef4d7b1478da7f2619cd2a60"
+  },
+  "system/lib64/libncurses.so": {
+    "interface_sha256": "3aa2cdaa5e029bae0372fe7731f81ca2c5be34894c2c0d4af2c27fea2359354e",
+    "byte_sha256": "46d3e328e3af7838369351164c8bc939f134a28b23aacba3ef1305161f78c5d7"
+  },
+  "system/lib64/libnetd_client.so": {
+    "interface_sha256": "2316b47529c4decc92fc25a1e398f7aaedafe61d8eb910dc242d1191c252fae8",
+    "byte_sha256": "3737b3a8f9122f0fbec3513d010daf77109d149ccfe37bebd2dc6255f05d740c"
+  },
+  "system/lib64/libnl.so": {
+    "interface_sha256": "6a8fe8f15196df2b929634ed29854b32c75bc5d263c7e23a61f1463e8a65808f",
+    "byte_sha256": "cc85e9fbae19e2b45331ec3af1c247d7dac257d752fa2b8101571d994df560ce"
+  },
+  "system/lib64/libresetprop.so": {
+    "interface_sha256": "7ba87eb956862e97a8d7c751269929a61680227b8320a9f941056e0926b2bc3a",
+    "byte_sha256": "93549ab60727c9bfd4ba3a97efb403368ca946079eaf3be308b071d3ead35f5e"
+  },
+  "system/lib64/libssh.so": {
+    "interface_sha256": "18e78187c5a381534965108af18eea153e9d74de5337d9f2622d1ab43d137257",
+    "byte_sha256": "0671ba176b4c7a8bd30f3ea1946c0cc8abeb48355c21d09153353f10701854a2"
+  },
+  "system/lib64/libssl.so": {
+    "interface_sha256": "95ebcd65f67670a6ee511c9c68c717cc5eee95411cd96514a078dea1a197687b",
+    "byte_sha256": "5e3b890c985472c140d8e14ca0d78cc4c1fac546b699628ec27205e69a14c3b3"
+  },
+  "system/lib64/libstdc++.so": {
+    "interface_sha256": "5a844f51f70470d7ca97d1d797370e6ebe15d9b86b6490e9e542889a65395880",
+    "byte_sha256": "5babaaa38e15aefb01d70b8183ee3870b701e9b92b9078ebcf35407f331d8bdf"
+  },
+  "system/lib64/libsync.so": {
+    "interface_sha256": "2768c1d004bb69dac363c8e8a8113b9903c5f5e3daf7437215db7674e5b2632e",
+    "byte_sha256": "3f30d536b1af1d9bece061b2655ce6f36ea5f3be2d7f1d7b1a461f12314a2a64"
+  },
+  "system/lib64/libsysutils.so": {
+    "interface_sha256": "bb639ca7909bb05ef6d70e9620748803f5b6fb30254c1eeeae3a5aef5f7382d3",
+    "byte_sha256": "dd9f2d37013faa69a7c4efd7269a022e5261777ca2cfb668ef863e78d411b867"
+  },
+  "system/lib64/libtar.so": {
+    "interface_sha256": "1e11ee88a63495b49907ee8287d77aed054307fbe438c7195fdd0b3a370a1ff6",
+    "byte_sha256": "8dcccd31be3afb41622b8ddb16a4c4745828de1c98ea43e9023188c8cfafa250"
+  },
+  "system/lib64/libtwadbbu.so": {
+    "interface_sha256": "8553818ebdb4b56ef51ed96c98a0dd3ef75e7f6c26cd1078d9ec6e537cdab628",
+    "byte_sha256": "3bd82f84cc11c0f15671b7939cf0238598795e42aa97c013f2292b4247b3da5a"
+  },
+  "system/lib64/libtwrpdigest.so": {
+    "interface_sha256": "de4c5b4ae3973c88b229b090914036ebbd95891ee0eabfb30bf550f5e256350d",
+    "byte_sha256": "99c84609e653e5655af3f3f0fe1d70bb98a41caa8234646245f3772c694f4dec"
+  },
+  "system/lib64/libtwrpmtp-ffs.so": {
+    "interface_sha256": "5bd48d11910c6ddd5cb0d41577f5f55715cccf43f65d58cd7884022dc25093f0",
+    "byte_sha256": "7f9d1cf3f8a5c36596013b91217ec2dfeffc94b27582e09c1c7665662723d3db"
+  },
+  "system/lib64/libunwind.so": {
+    "interface_sha256": "0f4b925406e5c47a18ac6b937b2eb73e66b36d59e57194145791d7ef9432b616",
+    "byte_sha256": "a2db9e5a94e12a1c553571cfcdd13ac17520adff42cfeb1891cd78d5ac39a24e"
+  },
+  "system/lib64/libusbhost.so": {
+    "interface_sha256": "f072d100372f1673d0e6432ab67408fe2fca88682d0734774e67a6348218d0b0",
+    "byte_sha256": "118ceb72e346fe81ce04588876444f1fa99816fcd7e95bca3da55521b561f772"
+  },
+  "system/lib64/libutil-linux.so": {
+    "interface_sha256": "b5ff01828b6812f8a30b1b08e9831c5ae3fb6aba528091d7d1c824175ada21d2",
+    "byte_sha256": "4b600d40757969b3f8a64a36b4ce4feda043677dfabc0fb51e777425dfad46fa"
+  },
+  "system/lib64/libvintf.so": {
+    "interface_sha256": "5a81a4af826c0b30fcfa986d314cbcbb25b2d436cd2673118be88d9456eb71f6",
+    "byte_sha256": "4d8897025667830edd3025883bb4fa7ea2c5caa735f19c350d47ec2687bef3fb"
+  },
+  "system/lib64/libvndksupport.so": {
+    "interface_sha256": "1f56a95bf4169f933f578c4a05296043dc26e9fd160ba90231de69eb01960764",
+    "byte_sha256": "05d19c6193ea165acc32c259fd947c3b6aa1f190d5253d500f091a24f5494330"
+  },
+  "system/lib64/libziparchive.so": {
+    "interface_sha256": "1954308a0eea83e3039912f4ae21fe25711389fd599b24e23163a0a9e2946138",
+    "byte_sha256": "e16e44637327b26697f45868786366f59ebc876f0c8a5cfbe4c9015a0ceab623"
+  },
+  "system/lib64/libcryptfsfde.so": {
+    "interface_sha256": "97685dfcc394d2a16c0dcd92709e538a80a757e5eb96cbe263908a411a53fdfc",
+    "byte_sha256": "1783e3dd72e9c94679e1fa48e549a6dc3d20be8284526676876f4d83937f0f88"
+  },
+  "system/lib64/libgpt_twrp.so": {
+    "interface_sha256": "f20c58550d0be27fa5beb2bfdec433227a6dd5de2c0f99b203955d7fee0b5357",
+    "byte_sha256": "a5b2520a89359456cd4b1f0f07b3da70ce623db391ab691197037b65c9db8f32"
+  },
+  "system/lib64/libstatssocket.so": {
+    "interface_sha256": "5aa97346bf7bc194d3df8594ed31b18e1d42329b284a739c1ad4a26e5b54ed23",
+    "byte_sha256": "c70fa366743987548481e54c169c7d928c4d35d2fb1c37533498bd9f8fdd92ed"
+  },
+  "system/lib64/libtwrpfscrypt.so": {
+    "interface_sha256": "aeb19acd22b9313dcbacc29a4e4d6a1a41aac7de4d14a67d5b46aff7a17f9249",
+    "byte_sha256": "c9bbf948ddb0765abb7e972c879722d6e944d3a70136256405932d715cde06b2"
+  },
+  "system/lib64/android.hardware.authsecret@1.0.so": {
+    "interface_sha256": "a592a69825420af67868c67813b341ec7d4bb588923f9d92c373cc7e8dd084a2",
+    "byte_sha256": "c1d9a545ba39e318feec5359b449890c825738680cdfb92268260347c8885257"
+  },
+  "system/lib64/android.hardware.oemlock@1.0.so": {
+    "interface_sha256": "51d3240840e2ee850100783985bba61db9ea311bbd5846f9aa4526d49aafdbe0",
+    "byte_sha256": "16fb1ececac4a3e3b289e7901d4e12277a29f4ad62b807e021b0f51cf637e42f"
+  },
+  "system/lib64/libkeymaster_messages.so": {
+    "interface_sha256": "708d495bfa505a6ddf45f423902fb43e00d7ca3335c824214954172471467a5e",
+    "byte_sha256": "5b5ecff6b5b161fd446efb31baa8ae7ff8b5be374124775d0027bfaee6f3b30e"
+  },
+  "system/lib64/android.hardware.keymaster@3.0.so": {
+    "interface_sha256": "cf6633b1662f5248cb1a186564c011a9729526118123884d3af14b3b6af27ebe",
+    "byte_sha256": "f2bfa670470f081a32fdcd6c648500a835ab381de64f4324262ef35feff8370c"
+  },
+  "system/lib64/libkeystore_binder.so": {
+    "interface_sha256": "ec1e0a946dbefe6542cfe4fe7d8b32d667dd1ab7d2a2787c16ae9efd5fd410af",
+    "byte_sha256": "14caf55152f4aa64b0daca7f3ae0281f5940b733fdc96f93de9d4cf12e426ca6"
+  },
+  "system/lib64/android.hardware.keymaster@4.0.so": {
+    "interface_sha256": "8be2530dbfc6f9a4554de1f6e0c360d6f3159ddbe97422f2a8916ba9bcc7f222",
+    "byte_sha256": "1e359db90498593f56996a01ff5a1cd2dfa8c2c721722a0231c02c2c47008945"
+  },
+  "system/lib64/libkeymaster4support.so": {
+    "interface_sha256": "d679208d75b2d062db76d90333e8515f2c69fcf859e95a67ed5c407c9dacac5f",
+    "byte_sha256": "72cde392295eedecec523dc9d6a001b13c971e6672b1ee7f02c4826c0e7546ed"
+  },
+  "system/lib64/android.hardware.confirmationui@1.0.so": {
+    "interface_sha256": "325e6e68a4b6319f7bffaf5ef4a9a74139aacb2d86ac390407510f33cb7ddbc9",
+    "byte_sha256": "66fb36305c3f07eaabc4d50fffa20afede14605c9b16ae1d4618c87345ac3037"
+  },
+  "system/lib64/android.hardware.gatekeeper@1.0.so": {
+    "interface_sha256": "d378368febdebf755add8ddcd9123632b1b59186fe571899fd67c79c16519712",
+    "byte_sha256": "f86293240d2289ada29c13475ca7130f09cc2d1035c698d1992ec71d82fd5ebb"
+  },
+  "system/lib64/android.hardware.keymaster@4.1.so": {
+    "interface_sha256": "ec506d2c7e58b27e0cbff64c7d29b8b7b57484deea438eac9edb944854dee971",
+    "byte_sha256": "c31aacf0ba85b2d5ec7139e0e3d95de1c1e4c2bf2195249e89e6a8940e79f1b9"
+  },
+  "system/lib64/libkeymaster4_1support.so": {
+    "interface_sha256": "41c2c9abf271c285f08e5d4255b01a8bf4a0eace61cd3ebce3d62ddef9c073d5",
+    "byte_sha256": "1bffecbccd15a59cd8c770c7baef4402009a4e8a1a1f1f2aef81a6b877f0e785"
+  },
+  "system/lib64/libf2fs_sparseblock.so": {
+    "interface_sha256": "c42ee867b334e5a1f44eb4c03527926731794a1ab16dc2130a3cc2f0dd2ad186",
+    "byte_sha256": "909bbbdcd7b8c7db0e3952f3cb43fd706eb1d90d09accfd95dd878f102c14369"
+  },
+  "system/lib64/libkeystore_parcelables.so": {
+    "interface_sha256": "08e67d88ac851eed5c37c8cfc29096d4ee96a91d7922885cd8b49f438d2db0c8",
+    "byte_sha256": "b66e0ed39f472d654a6017e6f9363fc1f4f58be103c7e4d1406c8d3a8ddee9d9"
+  },
+  "system/lib64/libkeystore_aidl.so": {
+    "interface_sha256": "d16250bf7b61dc2fbb4ff841d8a2289a9f4044b010d10b62c34827478c884efa",
+    "byte_sha256": "eefbf1a91fd86e601011ad60209971a6c24236b784aad8e3e2830ed2c2b29897"
+  },
+  "system/lib64/android.hardware.weaver@1.0.so": {
+    "interface_sha256": "102e92c76776f1f52bb47745ae656cf346ff86c6bebedda6bed6e27c2c4f7a17",
+    "byte_sha256": "7ef452fa2db8074e10784c4397371c26fb3d377ba5c7b17d5c98ce1eb09cb699"
+  },
+  "system/lib64/libhwbinder.so": {
+    "interface_sha256": "527b15f7e6a50ac59287d0111059d4b8b731de33f56bef56faf4dfddd3b14499",
+    "byte_sha256": "d286de72a01d95c552cb699a6e0bcc50b953ff0cd744635ce614353f260e60cc"
+  },
+  "system/lib64/libkeystore-attestation-application-id.so": {
+    "interface_sha256": "0dead0e4a8a7fdfb2c0b9e2dbdf0bba453781c4992252828642989695b3f2d1f",
+    "byte_sha256": "af82a5c5b6c7cfdafb4e8e1785016303913b705d0b2680f4a5a5b1be53b2ec69"
+  },
+  "t40km/root/data/local/tmp/t40_keyprobe": {
+    "interface_sha256": "8ade903bb82f1e94951e540cc2aee8d90909a2ffe99549602ce0f520a319c864",
+    "byte_sha256": "4aa0028764d6cc570e2c24617c8c0893142acdb93dd760f4cfcda69ad089ea9c"
+  },
+  "t40km/root/system/lib64/ld-android.so": {
+    "interface_sha256": "dd1fea6782f408bc5ccc62dd4019f02579cfa05492150e2230b4a65b5fe257c9",
+    "byte_sha256": "dc220529f3bbe15c3f3286d45aa2c93046c72dcc156e0b763160eb97fbdf70b1"
+  },
+  "t40km/root/apex/com.android.runtime/lib64/bionic/libdl_android.so": {
+    "interface_sha256": "5bc731fe2b909ad5f2181c2db0681267e22cfe4e8b339ba5ae2858f10805604e",
+    "byte_sha256": "99a059bbb1a6abd1465a107e098069440011af254746a27fa44fd2c2b7496d51"
+  },
+  "t40km/root/data/local/tmp/t40_keymaster_ready": {
+    "interface_sha256": "a408b33750f97e8e49d1ed4874a596d16a5dae0ef0f1cddfdc49ed62239af5a6",
+    "byte_sha256": "05fde103c514e42e3f20109c2e067b1839fc863f45d143db6c360cb93e304e46"
+  },
+  "system/bin/t40_install_keyring": {
+    "interface_sha256": "1bf3e0eaf3e930e9e93b53fddc12b5dff90fa3d6590fc0ce6172039944b13f6e",
+    "byte_sha256": "0ca5649e3f915f7ae17993198c76888535c30ad755a02d4f6ef32ff5161c8d41"
+  }
+}

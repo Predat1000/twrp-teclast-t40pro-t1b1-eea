@@ -1,0 +1,8 @@
+#Dynamic partitions fstab file
+#<dev> <mnt_point> <type> <mnt_flags options>  <fs_mgr_flags>
+
+system_a /system ext4 ro,barrier=1 wait,logical,first_stage_mount
+system_ext_a /system_ext ext4 ro,barrier=1 wait,logical,first_stage_mount
+vendor_a /vendor ext4 ro,barrier=1 wait,logical,first_stage_mount
+product_a /product ext4 ro,barrier=1 wait,logical,first_stage_mount
+/dev/block/by-name/metadata /metadata    ext4 nodev,noatime,nosuid,errors=panic wait,formattable,first_stage_mount,check

@@ -1,0 +1,806 @@
+{
+  "system/bin/android.hardware.boot@1.0-service": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/android.hardware.boot@1.0-service"
+    ],
+    "v53_reference_sha256": "0c0ddadfed49c80191f1c6cd694f6843d3ad5de03a7112086171e0a8ddb6c251"
+  },
+  "system/bin/android.hardware.boot@1.1-service": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/android.hardware.boot@1.1-service"
+    ],
+    "v53_reference_sha256": "399df33e90b1f9ff7e94a199eb750c1c9178d27f7c1b09409a70c4995f8a4ade"
+  },
+  "system/bin/android.hardware.health@2.0-service": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/android.hardware.health@2.0-service"
+    ],
+    "v53_reference_sha256": "590940bb8fb78d1882dc2290e6efba072ef0f2e31111d1c069333a1d11f9c8f2"
+  },
+  "system/bin/android.hardware.health@2.1-service": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/android.hardware.health@2.1-service"
+    ],
+    "v53_reference_sha256": "1ad6e7e68663b9eff4d2b5bfa1a47bc428b94792bbe670bf58ccb2e75d941bd4"
+  },
+  "system/bin/awk": {
+    "fresh_output_candidates": [
+      "system/bin/awk",
+      "recovery/root/system/bin/awk"
+    ],
+    "v53_reference_sha256": "c631e2d157103992be933b163189a0053edd65d6c48847702a9644aa76bf4445"
+  },
+  "system/bin/bash": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/bash"
+    ],
+    "v53_reference_sha256": "6bf0b30870d3578bf83e339cc90c82c284719be22be4b2acb6c0d1b3d56436d0"
+  },
+  "system/bin/bc": {
+    "fresh_output_candidates": [
+      "system/bin/bc",
+      "recovery/root/system/bin/bc"
+    ],
+    "v53_reference_sha256": "2532186f4d11f3970b9a3f21fc83530d699724a332ef6154599dd1a1cd7bd2dc"
+  },
+  "system/bin/bu": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/bu"
+    ],
+    "v53_reference_sha256": "c83f71e267bc4b34249e70d064f386b3617c226a8d0113dca0598ae48ea651c3"
+  },
+  "system/bin/dump_image": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/dump_image"
+    ],
+    "v53_reference_sha256": "1c9eeaa67cad891cc1c0f32259a11c5c0a34f8c1c8bb2ecb9548f887400f1870"
+  },
+  "system/bin/e2fsck": {
+    "fresh_output_candidates": [
+      "system/bin/e2fsck",
+      "recovery/root/system/bin/e2fsck"
+    ],
+    "v53_reference_sha256": "399d7af19852300b9a9904eed37fc6893b8cbe38aa787c20820db92a8ed9ae27"
+  },
+  "system/bin/e2fsdroid": {
+    "fresh_output_candidates": [
+      "system/bin/e2fsdroid",
+      "recovery/root/system/bin/e2fsdroid"
+    ],
+    "v53_reference_sha256": "cf06fff5ae1b9c49b04b97f78dbc3b78f4d598207f78b756872c5bf364580605"
+  },
+  "system/bin/erase_image": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/erase_image"
+    ],
+    "v53_reference_sha256": "397587944a606ccdca03552ca62d55acfb25f20a7f4c128acac4f3469813b3fe"
+  },
+  "system/bin/exfat-fuse": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/exfat-fuse"
+    ],
+    "v53_reference_sha256": "6612c9d2ec4ed723ad1be5e04efe95bff05f597afe87903418716f20c9f2b359"
+  },
+  "system/bin/fastbootd": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/fastbootd"
+    ],
+    "v53_reference_sha256": "03352c5a014d07693207e7331bd897c5d9f89becbddff0594e1badc47bc68d47"
+  },
+  "system/bin/fatlabel": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/fatlabel"
+    ],
+    "v53_reference_sha256": "1dae4e4dd4b21f75adae9df729e0b1d5d8f5e5df21fc9f39890af390e1e697c0"
+  },
+  "system/bin/flash_image": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/flash_image"
+    ],
+    "v53_reference_sha256": "bc8a37e49f032622770d760ad369c4fa905c346c6b51cf8790e0af536eccea06"
+  },
+  "system/bin/fsck.exfat": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/fsck.exfat"
+    ],
+    "v53_reference_sha256": "53e99052b8be08e5407dc22f8388d51028478e73325289a1ae0d01671f47e526"
+  },
+  "system/bin/fsck.f2fs": {
+    "fresh_output_candidates": [
+      "system/bin/fsck.f2fs",
+      "recovery/root/system/bin/fsck.f2fs"
+    ],
+    "v53_reference_sha256": "4c89966a08e7e9c22c7789edd3cfe07d0769d5c6088264cab1efba3f326f28ea"
+  },
+  "system/bin/fsck.fat": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/fsck.fat"
+    ],
+    "v53_reference_sha256": "4353b56950e27cc86733d9aedca0b2e472597031b1094bfd9c8c6e846cb0a763"
+  },
+  "system/bin/hwservicemanager": {
+    "fresh_output_candidates": [
+      "system/bin/hwservicemanager",
+      "recovery/root/system/bin/hwservicemanager"
+    ],
+    "v53_reference_sha256": "dca803a00c117bb448a7570ac462a1aa34947b35fb06ae47d3dd33be5f3f4487"
+  },
+  "system/bin/keystore": {
+    "fresh_output_candidates": [
+      "system/bin/keystore",
+      "recovery/root/system/bin/keystore"
+    ],
+    "v53_reference_sha256": "53a65a9bc6c7874ed65eaeaaa3036f7ba334a6adece27a81f9903cd65306ba8b"
+  },
+  "system/bin/keystore_cli_v2": {
+    "fresh_output_candidates": [
+      "system/bin/keystore_cli_v2",
+      "recovery/root/system/bin/keystore_cli_v2"
+    ],
+    "v53_reference_sha256": "385a76fe90c45188457d9b60c57f5e29de13c091a8f425bee62a86e365b0a009"
+  },
+  "system/bin/logcat": {
+    "fresh_output_candidates": [
+      "system/bin/logcat",
+      "recovery/root/system/bin/logcat"
+    ],
+    "v53_reference_sha256": "0ad0b5e0dfff9313855062e8b5893dab595043b2cc141f6af26cb34a754d5d32"
+  },
+  "system/bin/logd": {
+    "fresh_output_candidates": [
+      "system/bin/logd",
+      "recovery/root/system/bin/logd"
+    ],
+    "v53_reference_sha256": "962e8139e820049cbcfc05b77989d6df3bd2b9a4d8760c320049ecf7c518952c"
+  },
+  "system/bin/magiskboot": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/magiskboot"
+    ],
+    "v53_reference_sha256": "db14923ba3ff784c360cf68781cbcc08dd45d5a3e92e6b19071e05eac7359431"
+  },
+  "system/bin/make_f2fs": {
+    "fresh_output_candidates": [
+      "system/bin/make_f2fs",
+      "recovery/root/system/bin/make_f2fs"
+    ],
+    "v53_reference_sha256": "25134ff17e6d03a9c96913148bbac05a5b583220cc90054b244c6cdab7a6da31"
+  },
+  "system/bin/minadbd": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/minadbd"
+    ],
+    "v53_reference_sha256": "f39fbb87e1ca555a138bf2b0e3b34fbdbf73d27c4930110fd97384a65598685e"
+  },
+  "system/bin/mke2fs": {
+    "fresh_output_candidates": [
+      "system/bin/mke2fs",
+      "recovery/root/system/bin/mke2fs"
+    ],
+    "v53_reference_sha256": "0b76cca43ce777bfe00626c190e4c035824f4c8a8a9a80b7bc79a97508a09adf"
+  },
+  "system/bin/mkexfatfs": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/mkexfatfs"
+    ],
+    "v53_reference_sha256": "219c944dba263e462fd60b4e778ec7c32b96c15c62e72d2d350509abd2e6b178"
+  },
+  "system/bin/mkfs.fat": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/mkfs.fat"
+    ],
+    "v53_reference_sha256": "a4abf39fc74111f7794f3772114a6e682667d2973da2e965d639e7fc95ca1722"
+  },
+  "system/bin/nano": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/nano"
+    ],
+    "v53_reference_sha256": "036f88750959f7d9aab6db6627085f2f9ace9e90354af17feb32fcc827174dde"
+  },
+  "system/bin/pigz": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/pigz"
+    ],
+    "v53_reference_sha256": "956fa99e416339d1d3459cc59010fa8d23d9814e788c2f4ea321a9aa5652b55c"
+  },
+  "system/bin/reboot": {
+    "fresh_output_candidates": [
+      "system/bin/reboot",
+      "recovery/root/system/bin/reboot"
+    ],
+    "v53_reference_sha256": "d3bf46ec9af766f64d85f7ff0360fc6ad25a9f51475d3988ca7f6d2d576d31b0"
+  },
+  "system/bin/recovery": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/recovery"
+    ],
+    "v53_reference_sha256": "1eb7f7d7db9dbeecdbc2c2a15c3d6f6fb730fa43480dac1ada0ab2742aa35534"
+  },
+  "system/bin/resetprop": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/resetprop"
+    ],
+    "v53_reference_sha256": "922c74d197899b80f87ec898662a978e22aa9d988592d2165142e7483e6f6b89"
+  },
+  "system/bin/resize2fs": {
+    "fresh_output_candidates": [
+      "system/bin/resize2fs",
+      "recovery/root/system/bin/resize2fs"
+    ],
+    "v53_reference_sha256": "60ab632c11484403f4ae52834842039017f31a0c813fd89d4b155a13ea8b48d3"
+  },
+  "system/bin/servicemanager": {
+    "fresh_output_candidates": [
+      "system/bin/servicemanager",
+      "recovery/root/system/bin/servicemanager"
+    ],
+    "v53_reference_sha256": "5f13b41c242ed8c56b283a77b96c74cb22d4c022838c876c7daf7498ef866441"
+  },
+  "system/bin/sgdisk": {
+    "fresh_output_candidates": [
+      "system/bin/sgdisk",
+      "recovery/root/system/bin/sgdisk"
+    ],
+    "v53_reference_sha256": "fcde4731664dbda7e6ca5d32c1b8046c6092e9d397c36988e3bfd9a0fe6aa7c0"
+  },
+  "system/bin/sh": {
+    "fresh_output_candidates": [
+      "system/bin/sh",
+      "recovery/root/system/bin/sh"
+    ],
+    "v53_reference_sha256": "b7d4cae1c1c084eb2adb439a9dea2aa2dd96df575cef8c2031231d55b4cbc51a"
+  },
+  "system/bin/simg2img": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/simg2img"
+    ],
+    "v53_reference_sha256": "d4b39f7444d7ce6e6bf7aac581ce3d6a77c2b27362992fa1654b639a2b1d9df7"
+  },
+  "system/bin/sload_f2fs": {
+    "fresh_output_candidates": [
+      "system/bin/sload_f2fs",
+      "recovery/root/system/bin/sload_f2fs"
+    ],
+    "v53_reference_sha256": "58e57beb437f1d0be028066438c6d40ebef1491fd72f297e7ee14e8966515cdf"
+  },
+  "system/bin/toolbox": {
+    "fresh_output_candidates": [
+      "system/bin/toolbox",
+      "recovery/root/system/bin/toolbox"
+    ],
+    "v53_reference_sha256": "d7e965875ab923dfdbe7417a89557e81e671c033eef5b4b7f5ac0aea9352403b"
+  },
+  "system/bin/toybox": {
+    "fresh_output_candidates": [
+      "system/bin/toybox",
+      "recovery/root/system/bin/toybox"
+    ],
+    "v53_reference_sha256": "40928264c8da1868ac9eece0f04ab235cea0956d7ce7cd9b2dd0ceab950da9aa"
+  },
+  "system/bin/tune2fs": {
+    "fresh_output_candidates": [
+      "system/bin/tune2fs",
+      "recovery/root/system/bin/tune2fs"
+    ],
+    "v53_reference_sha256": "e07fdfffb0876b86dd65e3a41ed4687c9e7fcdc0fe9a49e911a716c66947bcc8"
+  },
+  "system/bin/twrp": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/twrp"
+    ],
+    "v53_reference_sha256": "990394e3dd670a07fb1ad72b527214a7be15bff3f07ee823a5134aa9890d1a5c"
+  },
+  "system/bin/update_engine_sideload": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/update_engine_sideload"
+    ],
+    "v53_reference_sha256": "766318b4f3cd03780931bdd7933904d515d2d952f1389fa1b738f072a5e5454b"
+  },
+  "system/bin/vndservicemanager": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/vndservicemanager"
+    ],
+    "v53_reference_sha256": "2d6742c75849c1ed5c800e0cc7b315f91bccaddc1f4d7b991400332249e2ca04"
+  },
+  "system/bin/vold_prepare_subdirs": {
+    "fresh_output_candidates": [
+      "system/bin/vold_prepare_subdirs",
+      "recovery/root/system/bin/vold_prepare_subdirs"
+    ],
+    "v53_reference_sha256": "d378eb1058545034b1f9a17b15980f2a1c01023e6074cf74c6fcc01bb46b36a5"
+  },
+  "system/bin/watchdogd": {
+    "fresh_output_candidates": [
+      "system/bin/watchdogd",
+      "recovery/root/system/bin/watchdogd"
+    ],
+    "v53_reference_sha256": "8a878731e6aa34d084c0f696936f51ee8eb3c7ab636bdf30e76a5b5f047c3d98"
+  },
+  "system/bin/ziptool": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/ziptool"
+    ],
+    "v53_reference_sha256": "7e11244887a4cd860af7f275b40194e32375ca63f40f60bb8fc779326cca2ec9"
+  },
+  "system/lib64/android.frameworks.stats@1.0.so": {
+    "fresh_output_candidates": [
+      "system/lib64/android.frameworks.stats@1.0.so",
+      "recovery/root/system/lib64/android.frameworks.stats@1.0.so"
+    ],
+    "v53_reference_sha256": "af0d60fcfacbe853fff843e039f1fb277b57926d2d085f3357a3cbd17bd30255"
+  },
+  "system/lib64/android.hidl.token@1.0.so": {
+    "fresh_output_candidates": [
+      "system/lib64/android.hidl.token@1.0.so",
+      "recovery/root/system/lib64/android.hidl.token@1.0.so"
+    ],
+    "v53_reference_sha256": "f8053bca836667a4b551ab602116c658be53a349761c17e3c5571563437cc144"
+  },
+  "system/lib64/hw/android.hardware.health@2.0-impl-2.1.so": {
+    "fresh_output_candidates": [
+      "recovery/root/system/lib64/hw/android.hardware.health@2.0-impl-2.1.so"
+    ],
+    "v53_reference_sha256": "652f86a760a6418a32693f6e2457bb3a8899e5496e280511e3eecc10add97819"
+  },
+  "system/lib64/ld-android.so": {
+    "fresh_output_candidates": [
+      "system/lib64/ld-android.so",
+      "recovery/root/system/lib64/ld-android.so"
+    ],
+    "v53_reference_sha256": "dc220529f3bbe15c3f3286d45aa2c93046c72dcc156e0b763160eb97fbdf70b1"
+  },
+  "system/lib64/libandroid_runtime_lazy.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libandroid_runtime_lazy.so",
+      "recovery/root/system/lib64/libandroid_runtime_lazy.so"
+    ],
+    "v53_reference_sha256": "ede117b77e0e07160ae6f781af96f811ec1a5b2e23506949d5f4b79a2a67b296"
+  },
+  "system/lib64/libaosprecovery.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libaosprecovery.so",
+      "recovery/root/system/lib64/libaosprecovery.so"
+    ],
+    "v53_reference_sha256": "705a01f3324d9b08fa7924b1c154b111f0848ab8898fd1e6a049450079bf8148"
+  },
+  "system/lib64/libbinder.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libbinder.so",
+      "recovery/root/system/lib64/libbinder.so"
+    ],
+    "v53_reference_sha256": "a288e9529c688ca0a6f617fb73b5fa41a8234b96845afd5a1eac1a69ffd54b1f"
+  },
+  "system/lib64/libbinder_ndk.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libbinder_ndk.so",
+      "recovery/root/system/lib64/libbinder_ndk.so"
+    ],
+    "v53_reference_sha256": "4368ce13e5758654439478b03c97fb679115a6060381bc4c527dc7643e361fc3"
+  },
+  "system/lib64/libblkid.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libblkid.so",
+      "recovery/root/system/lib64/libblkid.so"
+    ],
+    "v53_reference_sha256": "9b191125109f7f2cec100b492ff3b13365ed32c38d0c834c81030dc433d26dc4"
+  },
+  "system/lib64/libbmlutils.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libbmlutils.so",
+      "recovery/root/system/lib64/libbmlutils.so"
+    ],
+    "v53_reference_sha256": "b95cf4cf463faba64cf4b2a932a5ffab7fc8cb9f779426a8e303ec85231c5b17"
+  },
+  "system/lib64/libcap.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libcap.so",
+      "recovery/root/system/lib64/libcap.so"
+    ],
+    "v53_reference_sha256": "d65d3f8e210ee6046b79992b811b4c65486904c2b7a13bde25cbf0e990559ea8"
+  },
+  "system/lib64/libchrome.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libchrome.so",
+      "recovery/root/system/lib64/libchrome.so"
+    ],
+    "v53_reference_sha256": "0f447007e7c608536a47e4e2f0bfae733ec9e9c06eb29a8c064139e3a66770db"
+  },
+  "system/lib64/libclang_rt.ubsan_standalone-aarch64-android.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libclang_rt.ubsan_standalone-aarch64-android.so",
+      "recovery/root/system/lib64/libclang_rt.ubsan_standalone-aarch64-android.so"
+    ],
+    "v53_reference_sha256": "9275611767f1b4300997709e8ffe03ef3aacfc494631699ba23e0d8e68b26b14"
+  },
+  "system/lib64/libcrecovery.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libcrecovery.so",
+      "recovery/root/system/lib64/libcrecovery.so"
+    ],
+    "v53_reference_sha256": "574729311e3e5428b0460bff3273aabdd54ab25508853229619e64a00b670d54"
+  },
+  "system/lib64/libdl_android.so": {
+    "fresh_output_candidates": [
+      "recovery/root/system/lib64/libdl_android.so"
+    ],
+    "v53_reference_sha256": "99a059bbb1a6abd1465a107e098069440011af254746a27fa44fd2c2b7496d51"
+  },
+  "system/lib64/libevent.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libevent.so",
+      "recovery/root/system/lib64/libevent.so"
+    ],
+    "v53_reference_sha256": "de855cc0ef81ffe10eafa4187a17843466ff978fd71880615fac52d75b534e47"
+  },
+  "system/lib64/libexfat_twrp.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libexfat_twrp.so",
+      "recovery/root/system/lib64/libexfat_twrp.so"
+    ],
+    "v53_reference_sha256": "9a79ac6d7f34e673a1638257bdc2294c0a3daa6527c1d9c90a8ecaa5eb24250a"
+  },
+  "system/lib64/libext2_profile.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libext2_profile.so",
+      "recovery/root/system/lib64/libext2_profile.so"
+    ],
+    "v53_reference_sha256": "0d79adb9720862b761f1db2b33414ccebd405d2f5f7be9bec532a5c49db9f7d5"
+  },
+  "system/lib64/libflashutils.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libflashutils.so",
+      "recovery/root/system/lib64/libflashutils.so"
+    ],
+    "v53_reference_sha256": "c0c31aed9f93966059e2f253df8049df16397e66a058096d5cfabdc0b5f27c9e"
+  },
+  "system/lib64/libfscrypt.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libfscrypt.so",
+      "recovery/root/system/lib64/libfscrypt.so"
+    ],
+    "v53_reference_sha256": "1f156b2fd5398982cdc78065b9ef28c675d1cbb708908e53c07f73d56f8cd0b5"
+  },
+  "system/lib64/libft2.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libft2.so",
+      "recovery/root/system/lib64/libft2.so"
+    ],
+    "v53_reference_sha256": "4166d384a556d1d12df12e1dbb38618d9aaaaf9d57a80c5ee78f49f40653e32d"
+  },
+  "system/lib64/libhidltransport.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libhidltransport.so",
+      "recovery/root/system/lib64/libhidltransport.so"
+    ],
+    "v53_reference_sha256": "5d7da3b45546b7cdacb96e82b8865ce4a5857882511c0b7041f914c97e58ac2f"
+  },
+  "system/lib64/libminuitwrp.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libminuitwrp.so",
+      "recovery/root/system/lib64/libminuitwrp.so"
+    ],
+    "v53_reference_sha256": "e324ee4265867509ce4fe51500f2ebc18ca2328e38eac9507f95af1bb0f09109"
+  },
+  "system/lib64/libmmcutils.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libmmcutils.so",
+      "recovery/root/system/lib64/libmmcutils.so"
+    ],
+    "v53_reference_sha256": "37f3a61f1a2adf876e8ebb28a3b7eb5d5ecf5f71afe2468ea293b742eb1a4b1a"
+  },
+  "system/lib64/libmtdutils.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libmtdutils.so",
+      "recovery/root/system/lib64/libmtdutils.so"
+    ],
+    "v53_reference_sha256": "313d3822fcf0dc408d4e477828e38aebe4ceca8cef4d7b1478da7f2619cd2a60"
+  },
+  "system/lib64/libncurses.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libncurses.so",
+      "recovery/root/system/lib64/libncurses.so"
+    ],
+    "v53_reference_sha256": "46d3e328e3af7838369351164c8bc939f134a28b23aacba3ef1305161f78c5d7"
+  },
+  "system/lib64/libnetd_client.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libnetd_client.so",
+      "recovery/root/system/lib64/libnetd_client.so"
+    ],
+    "v53_reference_sha256": "3737b3a8f9122f0fbec3513d010daf77109d149ccfe37bebd2dc6255f05d740c"
+  },
+  "system/lib64/libnl.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libnl.so",
+      "recovery/root/system/lib64/libnl.so"
+    ],
+    "v53_reference_sha256": "cc85e9fbae19e2b45331ec3af1c247d7dac257d752fa2b8101571d994df560ce"
+  },
+  "system/lib64/libresetprop.so": {
+    "fresh_output_candidates": [
+      "recovery/root/system/lib64/libresetprop.so"
+    ],
+    "v53_reference_sha256": "93549ab60727c9bfd4ba3a97efb403368ca946079eaf3be308b071d3ead35f5e"
+  },
+  "system/lib64/libssh.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libssh.so",
+      "recovery/root/system/lib64/libssh.so"
+    ],
+    "v53_reference_sha256": "0671ba176b4c7a8bd30f3ea1946c0cc8abeb48355c21d09153353f10701854a2"
+  },
+  "system/lib64/libssl.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libssl.so",
+      "recovery/root/system/lib64/libssl.so"
+    ],
+    "v53_reference_sha256": "5e3b890c985472c140d8e14ca0d78cc4c1fac546b699628ec27205e69a14c3b3"
+  },
+  "system/lib64/libstdc++.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libstdc++.so",
+      "recovery/root/system/lib64/libstdc++.so"
+    ],
+    "v53_reference_sha256": "5babaaa38e15aefb01d70b8183ee3870b701e9b92b9078ebcf35407f331d8bdf"
+  },
+  "system/lib64/libsync.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libsync.so",
+      "recovery/root/system/lib64/libsync.so"
+    ],
+    "v53_reference_sha256": "3f30d536b1af1d9bece061b2655ce6f36ea5f3be2d7f1d7b1a461f12314a2a64"
+  },
+  "system/lib64/libsysutils.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libsysutils.so",
+      "recovery/root/system/lib64/libsysutils.so"
+    ],
+    "v53_reference_sha256": "dd9f2d37013faa69a7c4efd7269a022e5261777ca2cfb668ef863e78d411b867"
+  },
+  "system/lib64/libtar.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libtar.so",
+      "recovery/root/system/lib64/libtar.so"
+    ],
+    "v53_reference_sha256": "8dcccd31be3afb41622b8ddb16a4c4745828de1c98ea43e9023188c8cfafa250"
+  },
+  "system/lib64/libtwadbbu.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libtwadbbu.so",
+      "recovery/root/system/lib64/libtwadbbu.so"
+    ],
+    "v53_reference_sha256": "3bd82f84cc11c0f15671b7939cf0238598795e42aa97c013f2292b4247b3da5a"
+  },
+  "system/lib64/libtwrpdigest.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libtwrpdigest.so",
+      "recovery/root/system/lib64/libtwrpdigest.so"
+    ],
+    "v53_reference_sha256": "99c84609e653e5655af3f3f0fe1d70bb98a41caa8234646245f3772c694f4dec"
+  },
+  "system/lib64/libtwrpmtp-ffs.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libtwrpmtp-ffs.so",
+      "recovery/root/system/lib64/libtwrpmtp-ffs.so"
+    ],
+    "v53_reference_sha256": "7f9d1cf3f8a5c36596013b91217ec2dfeffc94b27582e09c1c7665662723d3db"
+  },
+  "system/lib64/libunwind.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libunwind.so",
+      "recovery/root/system/lib64/libunwind.so"
+    ],
+    "v53_reference_sha256": "a2db9e5a94e12a1c553571cfcdd13ac17520adff42cfeb1891cd78d5ac39a24e"
+  },
+  "system/lib64/libusbhost.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libusbhost.so",
+      "recovery/root/system/lib64/libusbhost.so"
+    ],
+    "v53_reference_sha256": "118ceb72e346fe81ce04588876444f1fa99816fcd7e95bca3da55521b561f772"
+  },
+  "system/lib64/libutil-linux.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libutil-linux.so",
+      "recovery/root/system/lib64/libutil-linux.so"
+    ],
+    "v53_reference_sha256": "4b600d40757969b3f8a64a36b4ce4feda043677dfabc0fb51e777425dfad46fa"
+  },
+  "system/lib64/libvintf.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libvintf.so",
+      "recovery/root/system/lib64/libvintf.so"
+    ],
+    "v53_reference_sha256": "4d8897025667830edd3025883bb4fa7ea2c5caa735f19c350d47ec2687bef3fb"
+  },
+  "system/lib64/libvndksupport.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libvndksupport.so",
+      "recovery/root/system/lib64/libvndksupport.so"
+    ],
+    "v53_reference_sha256": "05d19c6193ea165acc32c259fd947c3b6aa1f190d5253d500f091a24f5494330"
+  },
+  "system/lib64/libziparchive.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libziparchive.so",
+      "recovery/root/system/lib64/libziparchive.so"
+    ],
+    "v53_reference_sha256": "e16e44637327b26697f45868786366f59ebc876f0c8a5cfbe4c9015a0ceab623"
+  },
+  "system/lib64/libcryptfsfde.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libcryptfsfde.so",
+      "recovery/root/system/lib64/libcryptfsfde.so"
+    ],
+    "v53_reference_sha256": "1783e3dd72e9c94679e1fa48e549a6dc3d20be8284526676876f4d83937f0f88"
+  },
+  "system/lib64/libgpt_twrp.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libgpt_twrp.so",
+      "recovery/root/system/lib64/libgpt_twrp.so"
+    ],
+    "v53_reference_sha256": "a5b2520a89359456cd4b1f0f07b3da70ce623db391ab691197037b65c9db8f32"
+  },
+  "system/lib64/libstatssocket.so": {
+    "fresh_output_candidates": [
+      "recovery/root/system/lib64/libstatssocket.so"
+    ],
+    "v53_reference_sha256": "c70fa366743987548481e54c169c7d928c4d35d2fb1c37533498bd9f8fdd92ed"
+  },
+  "system/lib64/libtwrpfscrypt.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libtwrpfscrypt.so"
+    ],
+    "v53_reference_sha256": "c9bbf948ddb0765abb7e972c879722d6e944d3a70136256405932d715cde06b2"
+  },
+  "system/lib64/android.hardware.authsecret@1.0.so": {
+    "fresh_output_candidates": [
+      "system/lib64/android.hardware.authsecret@1.0.so",
+      "recovery/root/system/lib64/android.hardware.authsecret@1.0.so"
+    ],
+    "v53_reference_sha256": "c1d9a545ba39e318feec5359b449890c825738680cdfb92268260347c8885257"
+  },
+  "system/lib64/android.hardware.oemlock@1.0.so": {
+    "fresh_output_candidates": [
+      "system/lib64/android.hardware.oemlock@1.0.so",
+      "recovery/root/system/lib64/android.hardware.oemlock@1.0.so"
+    ],
+    "v53_reference_sha256": "16fb1ececac4a3e3b289e7901d4e12277a29f4ad62b807e021b0f51cf637e42f"
+  },
+  "system/lib64/libkeymaster_messages.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libkeymaster_messages.so",
+      "recovery/root/system/lib64/libkeymaster_messages.so"
+    ],
+    "v53_reference_sha256": "5b5ecff6b5b161fd446efb31baa8ae7ff8b5be374124775d0027bfaee6f3b30e"
+  },
+  "system/lib64/android.hardware.keymaster@3.0.so": {
+    "fresh_output_candidates": [
+      "system/lib64/android.hardware.keymaster@3.0.so",
+      "recovery/root/system/lib64/android.hardware.keymaster@3.0.so"
+    ],
+    "v53_reference_sha256": "f2bfa670470f081a32fdcd6c648500a835ab381de64f4324262ef35feff8370c"
+  },
+  "system/lib64/libkeystore_binder.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libkeystore_binder.so",
+      "recovery/root/system/lib64/libkeystore_binder.so"
+    ],
+    "v53_reference_sha256": "14caf55152f4aa64b0daca7f3ae0281f5940b733fdc96f93de9d4cf12e426ca6"
+  },
+  "system/lib64/android.hardware.keymaster@4.0.so": {
+    "fresh_output_candidates": [
+      "system/lib64/android.hardware.keymaster@4.0.so",
+      "recovery/root/system/lib64/android.hardware.keymaster@4.0.so"
+    ],
+    "v53_reference_sha256": "1e359db90498593f56996a01ff5a1cd2dfa8c2c721722a0231c02c2c47008945"
+  },
+  "system/lib64/libkeymaster4support.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libkeymaster4support.so",
+      "recovery/root/system/lib64/libkeymaster4support.so"
+    ],
+    "v53_reference_sha256": "72cde392295eedecec523dc9d6a001b13c971e6672b1ee7f02c4826c0e7546ed"
+  },
+  "system/lib64/android.hardware.confirmationui@1.0.so": {
+    "fresh_output_candidates": [
+      "system/lib64/android.hardware.confirmationui@1.0.so",
+      "recovery/root/system/lib64/android.hardware.confirmationui@1.0.so"
+    ],
+    "v53_reference_sha256": "66fb36305c3f07eaabc4d50fffa20afede14605c9b16ae1d4618c87345ac3037"
+  },
+  "system/lib64/android.hardware.gatekeeper@1.0.so": {
+    "fresh_output_candidates": [
+      "system/lib64/android.hardware.gatekeeper@1.0.so",
+      "recovery/root/system/lib64/android.hardware.gatekeeper@1.0.so"
+    ],
+    "v53_reference_sha256": "f86293240d2289ada29c13475ca7130f09cc2d1035c698d1992ec71d82fd5ebb"
+  },
+  "system/lib64/android.hardware.keymaster@4.1.so": {
+    "fresh_output_candidates": [
+      "system/lib64/android.hardware.keymaster@4.1.so",
+      "recovery/root/system/lib64/android.hardware.keymaster@4.1.so"
+    ],
+    "v53_reference_sha256": "c31aacf0ba85b2d5ec7139e0e3d95de1c1e4c2bf2195249e89e6a8940e79f1b9"
+  },
+  "system/lib64/libkeymaster4_1support.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libkeymaster4_1support.so",
+      "recovery/root/system/lib64/libkeymaster4_1support.so"
+    ],
+    "v53_reference_sha256": "1bffecbccd15a59cd8c770c7baef4402009a4e8a1a1f1f2aef81a6b877f0e785"
+  },
+  "system/lib64/libf2fs_sparseblock.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libf2fs_sparseblock.so",
+      "recovery/root/system/lib64/libf2fs_sparseblock.so"
+    ],
+    "v53_reference_sha256": "909bbbdcd7b8c7db0e3952f3cb43fd706eb1d90d09accfd95dd878f102c14369"
+  },
+  "system/lib64/libkeystore_parcelables.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libkeystore_parcelables.so",
+      "recovery/root/system/lib64/libkeystore_parcelables.so"
+    ],
+    "v53_reference_sha256": "b66e0ed39f472d654a6017e6f9363fc1f4f58be103c7e4d1406c8d3a8ddee9d9"
+  },
+  "system/lib64/libkeystore_aidl.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libkeystore_aidl.so",
+      "recovery/root/system/lib64/libkeystore_aidl.so"
+    ],
+    "v53_reference_sha256": "eefbf1a91fd86e601011ad60209971a6c24236b784aad8e3e2830ed2c2b29897"
+  },
+  "system/lib64/android.hardware.weaver@1.0.so": {
+    "fresh_output_candidates": [
+      "system/lib64/android.hardware.weaver@1.0.so",
+      "recovery/root/system/lib64/android.hardware.weaver@1.0.so"
+    ],
+    "v53_reference_sha256": "7ef452fa2db8074e10784c4397371c26fb3d377ba5c7b17d5c98ce1eb09cb699"
+  },
+  "system/lib64/libhwbinder.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libhwbinder.so",
+      "recovery/root/system/lib64/libhwbinder.so"
+    ],
+    "v53_reference_sha256": "d286de72a01d95c552cb699a6e0bcc50b953ff0cd744635ce614353f260e60cc"
+  },
+  "system/lib64/libkeystore-attestation-application-id.so": {
+    "fresh_output_candidates": [
+      "system/lib64/libkeystore-attestation-application-id.so",
+      "recovery/root/system/lib64/libkeystore-attestation-application-id.so"
+    ],
+    "v53_reference_sha256": "af82a5c5b6c7cfdafb4e8e1785016303913b705d0b2680f4a5a5b1be53b2ec69"
+  },
+  "t40km/root/data/local/tmp/t40_keyprobe": {
+    "fresh_output_candidates": [
+      "system/bin/t40_keyprobe"
+    ],
+    "v53_reference_sha256": "4aa0028764d6cc570e2c24617c8c0893142acdb93dd760f4cfcda69ad089ea9c"
+  },
+  "t40km/root/system/lib64/ld-android.so": {
+    "fresh_output_candidates": [
+      "system/lib64/ld-android.so",
+      "recovery/root/system/lib64/ld-android.so"
+    ],
+    "v53_reference_sha256": "dc220529f3bbe15c3f3286d45aa2c93046c72dcc156e0b763160eb97fbdf70b1"
+  },
+  "t40km/root/apex/com.android.runtime/lib64/bionic/libdl_android.so": {
+    "fresh_output_candidates": [
+      "recovery/root/system/lib64/libdl_android.so"
+    ],
+    "v53_reference_sha256": "99a059bbb1a6abd1465a107e098069440011af254746a27fa44fd2c2b7496d51"
+  },
+  "t40km/root/data/local/tmp/t40_keymaster_ready": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/t40_keymaster_ready"
+    ],
+    "v53_reference_sha256": "05fde103c514e42e3f20109c2e067b1839fc863f45d143db6c360cb93e304e46"
+  },
+  "system/bin/t40_install_keyring": {
+    "fresh_output_candidates": [
+      "recovery/root/system/bin/t40_install_keyring"
+    ],
+    "v53_reference_sha256": "0ca5649e3f915f7ae17993198c76888535c30ad755a02d4f6ef32ff5161c8d41"
+  }
+}

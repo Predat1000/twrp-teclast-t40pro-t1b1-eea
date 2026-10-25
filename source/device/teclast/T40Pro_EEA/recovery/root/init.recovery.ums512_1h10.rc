@@ -1,0 +1,60 @@
+# Teclast T40 Pro T1B1 / UMS512 1H10
+# Keep this hardware hook minimal. TWRP 11 owns the recovery and USB services.
+
+on init
+    setprop sys.usb.configfs 1
+    setprop sys.usb.controller musb-hdrc.0.auto
+
+on boot
+    setprop sys.usb.configfs 1
+    setprop sys.usb.controller musb-hdrc.0.auto
+    write /sys/block/mmcblk0boot0/force_ro 0
+    write /sys/block/mmcblk0boot1/force_ro 0
+
+# T40 Pro diagnostic instrumentation. Remove after hardware bring-up.
+on early-init
+    write /dev/kmsg "T40DIAG: early-init"
+    write /proc/monitor_enable "off"
+    write /dev/kmsg "T40DIAG: native-hang-monitor disable requested"
+
+on init
+    write /dev/kmsg "T40DIAG: init"
+
+on late-init
+    write /dev/kmsg "T40DIAG: late-init"
+
+on early-fs
+    write /dev/kmsg "T40DIAG: early-fs"
+
+on fs
+    write /dev/kmsg "T40DIAG: fs"
+
+on post-fs
+    write /dev/kmsg "T40DIAG: post-fs"
+
+on post-fs-data
+    write /dev/kmsg "T40DIAG: post-fs-data"
+
+on early-boot
+    write /dev/kmsg "T40DIAG: early-boot"
+
+on boot
+    write /dev/kmsg "T40DIAG: boot"
+
+on property:init.svc.recovery=running
+    write /dev/kmsg "T40DIAG: recovery service RUNNING"
+
+on property:init.svc.recovery=stopped
+    write /dev/kmsg "T40DIAG: recovery service STOPPED"
+
+on property:init.svc.adbd=running
+    write /dev/kmsg "T40DIAG: adbd RUNNING"
+
+on property:init.svc.adbd=stopped
+    write /dev/kmsg "T40DIAG: adbd STOPPED"
+
+on property:sys.usb.config=adb
+    write /dev/kmsg "T40DIAG: sys.usb.config=adb"
+
+on property:sys.usb.ffs.ready=1
+    write /dev/kmsg "T40DIAG: sys.usb.ffs.ready=1"
