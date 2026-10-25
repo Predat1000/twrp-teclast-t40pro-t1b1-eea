@@ -7,13 +7,33 @@
     "bytes": 330,
     "sha256": "18510c68b5dec914af65ac12144de1e693380e087e951d247c3dcf726c2a8ce5"
   },
+  "NOTICE.md": {
+    "bytes": 1738,
+    "sha256": "6dedbdc7a993e076ce0c9ea0f2c621cb721765d42dc121ad46d10fd246b07fdc"
+  },
+  "README.md": {
+    "bytes": 5270,
+    "sha256": "2632149b32124ad22e285ea8eeb8296aabf6cb090e1ab4c08dbe6083976b5857"
+  },
+  "SHA256SUMS": {
+    "bytes": 198,
+    "sha256": "5b9362d5a523feb0c51fae2d90a1d4b2289e4cec235bbdac5b5b1d132b5109c6"
+  },
   "docs/ARQUITECTURA.md": {
     "bytes": 2256,
     "sha256": "93869fed794f99a5d3fcfcfa1c803d51db213bc47261be5ef9222caa133702ac"
   },
+  "docs/DESBLOQUEO.md": {
+    "bytes": 4459,
+    "sha256": "d19fff7365930adb9b90bad53f523ecd20801fd7851c9a9e54bc0024543d56ee"
+  },
+  "docs/EMPEZAR.md": {
+    "bytes": 4292,
+    "sha256": "14f1f2e5a7043b5441790b7475d21cc5fc9d755e70786581d5dec2c40075f807"
+  },
   "docs/INSTALACION.md": {
-    "bytes": 4452,
-    "sha256": "6d2b56c470a2685607300ab74a1396fba7b29f07bc810597081f080b7db7294d"
+    "bytes": 8705,
+    "sha256": "c7aa3c0de1664b79d62711ce38aaff26c8588d0f3deefea6951cd15b1eaa7acf"
   },
   "docs/PUBLICATION-AUDIT.json": {
     "bytes": 829,
@@ -23,17 +43,13 @@
     "bytes": 6258,
     "sha256": "ff28cd38c59775c60c2f9dd5579f803d42c96098d4a282f697d6e1ea72fc36cb"
   },
+  "docs/ROOT-OPCIONAL.md": {
+    "bytes": 9025,
+    "sha256": "8cff6dd2ad7bf4696fdfa46fcb7f5e831b7a728b6c730ce8976da5803eb2a144"
+  },
   "docs/VALIDACION.md": {
-    "bytes": 3870,
-    "sha256": "da7d1d466401d1fdc0ec8a03ece002ea8000923191a588f32c07af964705bba5"
-  },
-  "NOTICE.md": {
-    "bytes": 1738,
-    "sha256": "6dedbdc7a993e076ce0c9ea0f2c621cb721765d42dc121ad46d10fd246b07fdc"
-  },
-  "README.md": {
-    "bytes": 4157,
-    "sha256": "cf4adddb9781ec23a4bf2744c327e1f4c82f0e5f21b533a65b684b299937b006"
+    "bytes": 5377,
+    "sha256": "ae017a30352fc986b3814651eb7b419240aed88dd78dadece9da8334bbb623a9"
   },
   "reproduce/assemble_clean.py": {
     "bytes": 8565,
@@ -87,10 +103,6 @@
     "bytes": 2892,
     "sha256": "b095d19b3fbde37a6b07c096e317995ce78947f7aa20b7b61572ad16241eb754"
   },
-  "SHA256SUMS": {
-    "bytes": 198,
-    "sha256": "5b9362d5a523feb0c51fae2d90a1d4b2289e4cec235bbdac5b5b1d132b5109c6"
-  },
   "source/device/teclast/T40Pro_EEA/Android.bp": {
     "bytes": 185,
     "sha256": "301b1a2207c354a68c41d009c3e97696a050f31a4617ee2d1d7560b48621da70"
@@ -106,6 +118,10 @@
   "source/device/teclast/T40Pro_EEA/BoardConfig.mk": {
     "bytes": 5477,
     "sha256": "f5dffc7b3b05cf66b60005e4de3286b5db6f5b87f13f6724c0108e618c1b517b"
+  },
+  "source/device/teclast/T40Pro_EEA/README.md": {
+    "bytes": 654,
+    "sha256": "e44cd23bd6cf15e85a646cc4fd926ec35a2432d8603c3cc3febfcb3274801cb2"
   },
   "source/device/teclast/T40Pro_EEA/device.mk": {
     "bytes": 569,
@@ -147,13 +163,13 @@
     "bytes": 6984,
     "sha256": "116601111fb2916c7b6579aedf6d9dfc62c18ee7c33aa4888f060be12ff20e31"
   },
-  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/files/system/vold/Keymaster.cpp": {
-    "bytes": 9208,
-    "sha256": "a222c147b77870ece1e6029cbc64e214136fef594e55d5304ecbca48fede010f"
-  },
   "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/files/system/vold/KeyUtil.cpp": {
     "bytes": 18342,
     "sha256": "d373358dd15f5fe50e152d7c638a1bbdee322537ecc8589a61639aeb287b8edc"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/files/system/vold/Keymaster.cpp": {
+    "bytes": 9208,
+    "sha256": "a222c147b77870ece1e6029cbc64e214136fef594e55d5304ecbca48fede010f"
   },
   "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/files/system/vold/MetadataCrypt.cpp": {
     "bytes": 14685,
@@ -195,13 +211,13 @@
     "bytes": 7030,
     "sha256": "cccfdb5da95f6a961021abd9f44d0abda12facd5c195f992e612f7596c3a6b98"
   },
-  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/original/system/vold/Keymaster.cpp": {
-    "bytes": 9212,
-    "sha256": "0dd4d451a3ba35daf73beb59605b49afb9d78beb4fdd5c046d531aee3adbf3c7"
-  },
   "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/original/system/vold/KeyUtil.cpp": {
     "bytes": 17853,
     "sha256": "20cdf4122e33d13f32eeac128583b1379b9185e435d5825b94042e2e3f00fcad"
+  },
+  "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/original/system/vold/Keymaster.cpp": {
+    "bytes": 9212,
+    "sha256": "0dd4d451a3ba35daf73beb59605b49afb9d78beb4fdd5c046d531aee3adbf3c7"
   },
   "source/device/teclast/T40Pro_EEA/prebuilt/sourcecode/original/system/vold/MetadataCrypt.cpp": {
     "bytes": 14496,
@@ -223,9 +239,13 @@
     "bytes": 468,
     "sha256": "9bb0112a47d8537fee751ef03122eca4d225e8a9865b56abbf9a76a55e85addd"
   },
-  "source/device/teclast/T40Pro_EEA/README.md": {
-    "bytes": 654,
-    "sha256": "e44cd23bd6cf15e85a646cc4fd926ec35a2432d8603c3cc3febfcb3274801cb2"
+  "source/device/teclast/T40Pro_EEA/recovery-overlay.sh": {
+    "bytes": 1206,
+    "sha256": "16c847da8452f7f7077ded2a6c85d96deb56751abf9a468882c0fac4384d1786"
+  },
+  "source/device/teclast/T40Pro_EEA/recovery.fstab": {
+    "bytes": 4135,
+    "sha256": "af208e6b3fe7d428834305d1998cd20cea381924b662f271bc2532eb33cbfa74"
   },
   "source/device/teclast/T40Pro_EEA/recovery/root/first_stage_ramdisk/fstab.ums512_1h10": {
     "bytes": 489,
@@ -286,14 +306,6 @@
   "source/device/teclast/T40Pro_EEA/recovery/root/ueventd.ums512_2h10.rc": {
     "bytes": 576,
     "sha256": "bb233f6de7573c5db27dba4cd2e49a2cbc4af2c324322fe41efcdad453e37dd9"
-  },
-  "source/device/teclast/T40Pro_EEA/recovery-overlay.sh": {
-    "bytes": 1206,
-    "sha256": "16c847da8452f7f7077ded2a6c85d96deb56751abf9a468882c0fac4384d1786"
-  },
-  "source/device/teclast/T40Pro_EEA/recovery.fstab": {
-    "bytes": 4135,
-    "sha256": "af208e6b3fe7d428834305d1998cd20cea381924b662f271bc2532eb33cbfa74"
   },
   "source/device/teclast/T40Pro_EEA/setup-makefiles.sh": {
     "bytes": 735,

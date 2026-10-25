@@ -28,8 +28,20 @@ La imagen final **no** es byte idéntica a la referencia, por lo que se probó d
 - Referencia V53B: `66e148317575181b9542fc08428081934b9822e6c3c5435b4570b44bfd6941c0`.
 - CP10 limpio: `b029e36391ca919feef66d608eb5964562433d1b205ee0ebf8ba8579a0af4451`.
 
+## Alcance de las guías para nuevos usuarios
+
+| Etapa | Evidencia disponible | Límite |
+|---|---|---|
+| Desbloqueo | Historial del 14/10: unisoc-unlock, confirmación física y propiedades unlocked en Android. Auditoría actual del paquete 0.0.2. | No se repitió el desbloqueo ni se certifica la copia SN de auditoría o cualquier driver de Windows. |
+| TWRP sin root Android previo | V42 se flasheó en B por fastbootd antes de APatch. El 18/10, SHA de bloques confirmó stock/V45 escritos y V45 residente arrancó al seleccionar B y hacer reboot normal. | Esta ruta histórica no es una nueva instalación completa de CP10 desde stock bloqueado. El arranque y SHA de B deben comprobarse en cada unidad. |
+| CP10 | Imagen exacta instalada por dd y leída íntegramente, con arranque real. | No se infiere persistencia de una respuesta OKAY. |
+| Root opcional | CP01: APatch Manager 11282/e8e4651, KernelPatch 0.13.9, AndroidPatch FULL; tres reinicios y comprobaciones funcionales PASS. | El boot personal no se distribuye. Una imagen con otra SuperKey requiere su propia firma y validación. |
+
+La lectura del 18/10 corrigió la hipótesis inicial de que los flashes fastbootd no habían persistido. Una pantalla stock después de `reboot recovery` no demostraba el contenido de boot_b. La conclusión que se conserva es **verificar lo escrito**, no afirmar que fastboot nunca escribe.
+
 ## No probado / no prometido
 
+- Secuencia completa desde bootloader bloqueado de fábrica hasta CP10 y root opcional siguiendo las nuevas guías.
 - Cambios de PIN o contraseña y otras configuraciones de FBE.
 - ZIP arbitrarios o restauración completa de backups.
 - Otras placas, firmware, revisiones de hardware o ROM.
